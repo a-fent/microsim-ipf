@@ -18,7 +18,7 @@ This paper was developed from 2013 to 2015, whilst the author was a visiting fel
 
 The research used survey microdata from the Family Resources Survey and Households Below Average Income; access to these was provided by the UK Data Archive at the University of Essex. It also made use of 2001 and 2011 Census tables, provided by NOMIS. Additional administrative data used in the paper are provided by DWP (benefit claim statistics), HMRC (personal tax data), VOA (Council Tax data) and ONS (Regional Accounts). Crown Copyright on these materials is acknowledged as applicable.
 
-The simulation and analysis of results was carried out in R statistics and made extensive use of several packages, including "survey", "ggplot2", "Hmisc". An online repository containing the IPF code, the resulting simulation weights, and the source for the analyses and figures presented in this paper is available online at *TODO*.
+The simulation and analysis of results was carried out in R statistics and made extensive use of several packages, including "survey", "ggplot2", "Hmisc". An online repository containing the IPF code, the resulting simulation weights, and the source for the analyses and figures presented in this paper is available online at https://github.com/a-fent/microsim-ipf.
 
 
 \clearpage
@@ -208,7 +208,7 @@ In the example here, SMS is used to estimate household income for the 33 borough
 
 The specific variables in the local population data are chosen on the strength of being predictors of household income in the survey data. The selection of income predictors by regression methods has been treated systematically and in depth by both Anderson [[cite:anderson_creating_2007][;]] and the ONS [[cite:methodology_directorate_model-based_2010][;]]. The present research drew on this work, and thus variable selection is not reported here in detail. The main differences in this paper is the use a set of variables common to both 2001 and 2011 datasets, and the possibility in the hierarchical fitting technique, described below, of using not only household-level but also adult-level Census and survey variables.
 
-Table \ref{table-linkvars} summarises the linking variables used in the three variant simulations presented in this paper, the /Household-Only/, /Multi-Level/ and /SPI Prior-Weights/ simulations, which are shortly introduced. The variables are listed in reverse order in which the survey weights are adjusted to population totals, so that the variables listed first have, as it were, the highest priority. This simulated local area population totals for the last entered variable, household type, are thus always exactly correct. The source data, showing the derivation of the marginal constraints from census tables are available in the downloadable package accompanying this paper *TODO* [fn:8]. 
+Table \ref{table-linkvars} summarises the linking variables used in the three variant simulations presented in this paper, the /Household-Only/, /Multi-Level/ and /SPI Prior-Weights/ simulations, which are shortly introduced. The variables are listed in reverse order in which the survey weights are adjusted to population totals, so that the variables listed first have, as it were, the highest priority. This simulated local area population totals for the last entered variable, household type, are thus always exactly correct. The source data, showing the derivation of the marginal constraints from census tables are available in the downloadable package accompanying this paper[fn:8]. 
 
 #+LABEL: table-linkvars
 #+CAPTION: Variables used to link the Family Resources Survey with the Census 2001 and 2011
@@ -740,7 +740,7 @@ This paper has largely left aside the potential (and historically important) use
 
 [fn:7] The fact that income estimation is being attempted typically implies implies the absence of comprehensive income data against which the precision of any estimate might definitively be assessed
 
-[fn:8] =TODO=
+[fn:8] https://github.com/a-fent/microsim-ipf
 
 [fn:9] http://www.ons.gov.uk/ons/rel/regional-accounts/regional-household-income/regional-gross-disposable-household-income--gdhi--2013/stb-regional-gdhi-2013.html
 
