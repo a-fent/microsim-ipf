@@ -1,0 +1,613 @@
+#+TITLE: Gentrification in London: a progress report, 2001-2013
+#+AUTHOR: Alex Fenton
+#+PROPERTY: header-args:R :session *R-LondonGrowthPoverty* :cache yes :exports results
+#+OPTIONS: toc:nil
+#+LATEX_CLASS: generic-paper
+#+LATEX_HEADER:\IfFileExists{secca-article.sty}{\usepackage{secca-article}}{}
+#+LATEX_HEADER: \addbibresource{everything.bib}
+
+#+BEGIN_ABSTRACT
+Over the 2000s, London experienced a marked increase in aggregate prosperity. Headline poverty rates also remained high, but there was a spatial and social redistribution of poverty within the city. The paper delineates salient features of this redistribution using administrative and household income simulation data. In the poorest, eastern parts of inner London, poverty rates fell. Here there was intense development and valorisation of land and housing around the financial districts, rapid population growth and in-migration, and absolute falls in the numbers of the out-of-work poor, through either their displacement or their integration into the employed labour force. Poverty rates rose in relatively disadvantaged parts of outer London. This is accounted for partly by the displacement of the non-working poor from inner London, but predominantly by the impoverishment of low-income workers through rises in the real cost of private housing. This poverty analysis provides evidence for a mode of urban development distinctive to the deregulated capitalism of Britain in the period. It invites questions about the applicability to other large cities, and suggests that welfare and housing policies in the period immediately after that considered here are almost certain to intensify the trends described.
+#+END_ABSTRACT
+
+#+TOC: headlines 2
+#+LATEX: \listoftables
+#+LATEX: \listoffigures
+
+=Declining of conditions mentioned in the Rowntree Commission=
+* Introduction
+This paper describes substantial changes to the distribution of London's poor over the space of the city in London from 2001 to 2013, and offers these as evidence for "gentrification", understood here as a form of urban development distinctive to a financial capital under a deregulated form of capitalism. The paper begins, however, from three commonplace observations about London in recent decades. The first is that, for decades up to the turn of the century and beyond, some of London's inner districts have featured in official indices as among the most deprived in Britain. According to measures such as the 2004 English /Indices of Multiple Deprivation/, based on 2001 data, boroughs like Hackney, Tower Hamlets and Islington had deprivation rates comparable to the most disadvantaged urban districts of the de-industrialising north in Greater Manchester, Merseyside and Humberside. These rankings of deprivation, heavily weighted on the prevalence of low income and out-of-work households in the population, reflected both the extent of poverty across these London boroughs and its intense concentration in particular neighbourhoods.
+
+The second observation is that over the course of the 2000s, London far surpassed the rest of the UK in the production of surplus value. Even with the hiccups of the dot-com crash of 2001 and the financial crisis of 2008, the presence of executive offices of high-value financial and professional services in the city meant that aggregate measures of value production and income to the household sector (such as GVA and GDHI) grew far faster in London than elsewhere. Just as with deprivation, however, this was not a spatially uniform process: this economic expansion was heavily concentrated in inner London, with growth in outer London similar to the rest of Britain.
+
+Equally spatially localised is the third process, which is termed here the increased /commodification/ of housing in London. The term gathers together developments better known under commoner academic and journalistic labels: "house price booms", "densification" and  "housing sell-offs". By "commmodification" is meant the increasing treatment of housing as a market-traded good, and the correspondingly increased importance of this fictive good within the whole economy. Significant specific elements of this commodification in London in the past decade include the large-scale demolition and redevelopment of housing estates originally designed as public housing within "regeneration" programmes, the continued piecemeal selling-off of public housing stock, the growth of private renting relative to social rented and owner-occupied housing, and the use of such private rented housing to provide housing to low-income households by means of government subsidy (Housing Benefit). These structural developments have been accompanied, not coincidentally, by sharply rising real prices of private housing.
+
+Taken together, these three processes give us /a priori/ reason to believe that the spatial distribution of poverty within London may have undergone significant change in the early 2000s. The paper is thus primarily an empirical examination of the interaction of these trends interacted across the space of the city. The paper begins with a summary of analyses of the distribution of poverty as proxied by administrative data. It then proceeds to income simulations which estimate  poverty more directly, giving a fuller account of the effects of housing costs on living standards, and of changes in the local structure composition of poverty. The present work treats the methodological aspects of the analysis only briefly; an accompanying working paper /Microsimulation estimates of household income distributions in London boroughs, 2001 and 2011/ discusses the estimation method used  here in more detail.
+
+** Trends in Inequality in London
+This paper adopts a descriptive and empirical stance towards the exclusively quantitative data it reports. One cannot pretend, however, that quantitative data, any more than any other data, merely present themselves, /wertfrei/, ready to be tidied up, shuffled into graphs and decorated with some descriptive text. Thus there is the "so what?" question; putanother way, bothering to look at something's spatial distribution implies that that distribution reveals more than simply the distribution itself. This point has been forcefully made in relation to the measurement of spatial "segregation" or "isolation" of ethnic minorities[[cite:simpson_statistics_2004][;]], and holds equally true if examining the (de)-concentration of inner-urban poverty.
+
+One "so-what" — an important one, and the one whose terminology and concerns will recognisable in much of the paper — are the series of economic and social problems which have emerged or appeared starker over the course of the last decade in London. The unchanged, perhaps even rising, prevalence of poverty in London is a problem in itself, one prominent link in a chain of connected public problems, like inequality, housing, migration, pay, welfare benefits, taxation, governance and so forth. These problems lend themselves to empirical analysis. Such analyses are then taken up in policy debates, to support claims for the importance of issues, and about which interests ought to be favoured in policy in these discrete fields: should planning restrictions be relaxed? should housing subsidies be reduced? should London have its own minimum wage?
+
+It is beyond the scope of this paper to take in all recent work on poverty and inequality in London comprehensively, let alone to venture along the chain of problems and their associated social scientific analyses. Two series of this type of research publications, however, provide important background to this paper. These are, firstly, the /London Poverty Profiles/ [[cite:aldridge_londons_2013][;]] and, secondly, work on London's distribution of income at the Centre for Analysis of Social Exclusion[[cite:lupton_prosperity_2013,vizard_changing_2015][;]].
+
+The /Poverty Profiles/ produced by the New Policy Institute provide comprehensive presentations of data on deprivation, inequality and poverty in London, together with illuminating commentary. The most recent (2013) Profile notes the tendency of poverty to move outwards in London and the differential effects of recession on jobs in Inner and Outer London, further contributing to this trend. The report also notes, as other observers have, the prevalence of low pay in London, that is, wages which even in full-time employment are insufficient to provide basic living standards. A corollary of this is the extensive and growing dependence of many employed Londoners on Housing Benefit or Local Housing Allowance to meet their rent.
+
+CASE's reports focus rather more on changes in the distribution of income, wages and wealth, and the consequences of these for measures of inequality. CASE's analyses are usefully divided into two time periods, and these divisions will be pertinent to the interpretation of the findings presented here. The first report addresses the period from 2001 to 2007, a period of relatively stable accumulation, modest growth in wages, and modest falls in poverty. The more recent publication reprises these analyses from 2007 to 2013, from the banking crisis and ensuing recession to the first half or so of the period of Coalition goverment from May 2010 to May 2015. The researchers argue that the early half of the period saw real incomes relatively protected, as household incomes were protected by both the "automatic stabilisers" of the welfare system and the counter-cyclical fiscal policy of the government to 2010. However, with austerity — and even before the implementation of cuts to social security benefits —real incomes fell sharply from 2010, and fell most at the bottom end of the income distribution. As in the NPI reports, CASE's authors point to the central importance of housing costs in explaining rising poverty and income inequality in London in the period from 2007 as whole [[cite:vizard_changing_2015][p14;]].
+
+** Poverty and Gentrification
+*** TODO - Erik Olin Wright on poverty and class
+The other "so-what" for this paper is, as the paper's title suggests, "gentrification". The paper engages with this sometimes contentious term for two reasons. For one, the term is a reminder that quantitative changes are connected to changes in the physical shape and lived experience of a city. What the numbers show is also lived and experienced, and what is lived and experienced (as gentrification, for example) is not merely an arbitrary local consequence of taste or fashion. More directly pertinent to this paper, the term gentrification, especially in the direction taken in the literature from around 2000, embeds explanations of urban change in the prevailing mode of economic organisation, and emphasises the role of state policy on land and housing in changing the city and the distribution of people within it[[cite:hackworth_changing_2001][;]]. The argument is thus here for an interpretive framework for quantitative spatial analysis that takes spatial difference not simply as the mechanical economic outcome of markets and policies, and neighbourhood change not only as the result of shifts in cultural taste. The empirical data presented in this paper are offered as evidence of gentrification, so understood, at the city scale.
+
+It is assumed that readers will already know whether they much care for gentrification as an idea, and, if they do, more or less how they would define and understand it. The paper thus forbears from summarising a case for and against, or, worse, re-opening the much-laboured topic of definitions. There are nonetheless considerations that must briefly be addressed, on the treatment of a quantitative analysis of the spatial distribution of poverty as evidence about gentrification.
+
+The first matter is that the paper uses /income/ as its central measure, with a concept of poverty derived from it in a manner that is currently conventional in British and European official poverty statistics. The gentrification literature in Britain however, has been above all interested in /social class/; class and class structure have been for many authors central to the definition, measurement and explanation of gentrification. Though not unconnected, income, poverty and class are by no means the same thing. Poverty here is a state in which a household is, or is not, at a point in time; class is a durable characteristic of persons, defined primarily by their relation to the labour market, which serves as a much wider principle of social stratification and cultural recognition.
+
+"The poor", as analysed here, are not straightforwardly, a class. Poverty statistics as used here provide no access to sociological dimensions of class central to gentrification, such as the place of class in local social reproduction and social solidarity, cultural recognition, consumption patterns and so on. These dimensions of class and their relationship to place have supplied the material for a vast sociological literature.  It should not be inferred from their absence here either that these dimensions are thought unimportant, nor that simple income scales are deemed a replacement for class analysis. Money, however, nonetheless represents a fundamental, durable and transmissible form of social power and dimension of social stratification. The (re-)distribution in cities of those with relatively little power is necessarily a definining feature of gentrification.
+
+If poverty statistics seem to present problems with the necessarily arbitrary definitions they use, it is also worth noting thatsocial class presents serious problems of its own for quantitative analysis over time. Such analyses have to reconcile changes in class structure, reflecting profound changes in the content and organisation of labour, with the relative fixity of class classifications used in official statistics. The relative size of (statistical) classes grows and shrinks over time, but the economic and status position of those classes is also changing. In London it is certainly true that industry is a residual sector [[cite:hamnett_new_2009][;]], and the industrial working class a correspondingly residual class, but the fixity of official classifications also disguises the dominated position of parts of service and technical occupations. Attempts to refound class classifications have not received general acceptance, and are yet further from adoption in official statistics. In partial defence of using poverty statistics, it will be seen here, as many others have noted, that the income-poor are now predominantly class composed of /working/ people and their dependants, rather than of those not in work.
+
+/Displacement/ is another watchword of gentrification studies that is relevant to the interpretation of the material which follows: whether, and how, changes in neighbourhoods lead to the exclusion of previous residents.  The notion of displacement appears to set a high burden of proof for those seeking to demonstrate gentrification[[cite:slater_eviction_2006][p748;]]. Not only must something be shown to have occurred (people moving away, a change in the character of the neighbourhood), but it must also be attributable to the recomposition of the neighbourhood /and/ be demonstrated to be involuntary or disadvantageous.
+
+This paper reports only area aggregate rates and counts, and does so only at two cross-sections. It has nothing direct to say about the changing circumstances of individuals and households over time, let alone the structure of motivations and constraints within which such changes have unfolded. Although the analysis examines the composition of poverty over time, it cannot assess the different possible causes of change — the improved circumstances of existing residents, as against moves, voluntary or otherwise, of populations in and out of areas. The area aggregate changes discussed here are in thus necessary, but not sufficient evidence, for one form of displacement. The extent to which the changes presented reflect "displacement" is left open. A sanguine view, however, that the spatial redistribution of poverty demonstrated can be attributed to the beneficial workings of an expanding economy, active labour market interventions and the exercise of residential choice in housing is implausible. Very few, after all, choose to be poor.
+* Outline, Methods and Sources
+The empirical analysis which follows is divided into two main sections. The first uses administrative data to describe the changing /distribution/ of poverty over the period 2001 to 2013. It looks particularly at the relationship between this and patterns of population growth and housing development. The second section uses simulation data to look in more detail at the changing /composition/ of poverty, in particular, changes in housing tenure and employment status. Two different sources are used for these two sections.
+** Administrative poverty proxies
+Standard UK government survey measures of income poverty are not available at spatial scales below regions. The first section uses a proxy measure, the /Unadjusted Means-Tested Benefits Rate/ (UMBR). This dataset provides observations annually from 2001 to 2013, for around 40,000 small geographic units in Britain, including somewhat under 5,000 in London, and is based on administrative data on major means-tested social security benefits, such as Income Support and Job-Seeker's Allowance[[cite:fenton_unadjusted_2015][;]]. It is not directly a poverty rate (because not all poor households receive means-tested benefits, and not all benefit recipients are income-poor), but exhibits a strongly linear correlation with conventional poverty rates. The advantages of this dataset for the analysis lie in its geographic detail and consistent measurement for the period of interest. It is measured to UK-standard geographic boundaries, which enable it to be linked to other data sources, as here, where it is examined against administrative data on dwelling value and numbers.
+** Income Simulations
+A disadvantage of UMBR, and of deprivation indices using similar approaches, is that they say little about the composition of poverty, and are insensitive to increases in in-work poverty caused by low wages and housing costs. For this reason, the second empirical section uses simulated estimates of the whole income distribution for individual London boroughs to refine the findings from the preceding section. These simulation estimates combine local area census tables and tax data with detailed sample survey information on income from the /Households Below Average Income/ (HBAI) series. The simulation technique and the resulting estimates are discussed in detail in an accompanying paper, /Microsimulation estimates of household income distributions in London boroughs, 2001 and 2011/. In short, they allow the kind of income and poverty analyses typically done with HBAI at national and regional level to be carried out for smaller areas, here London boroughs. Their value for the present work lies particularly in their measuring income poverty directly in conventional terms, accounting for household size and housing costs, and the possibility of looking at income and poverty prevalence for population subgroups.
+* The Spatial Redistribution of Poverty
+Figure \ref{fig:umbr-distribution} presents the distribution of poverty (based on the UMBR proxy) across London in four years between 2001 and 2013. In it around 4,800 base areal units, Lower-Level Super Output Areas,  are grouped into hexagonal zones. The space allotted to inner London is increased to show the geographic trends more clearly. The approximate boundaries of the five NUTS2 areas of London — based on the Office for National Statistics definition[fn:2] — are outlined with thick white lines.
+
+The picture presented will be familiar from any number of mappings of income poverty, material deprivation and social exclusion based on a wide variety of sources[[cite:mclennan_english_2011][p69;For example, ]]. It shows the highest concentrations of poverty in inner East London, particularly in the boroughs of Hackney, Tower Hamlets and Islington, and extending into parts of Islington, Southwark and Lambeth. Although the areas with the absolute highest poverty in 2001 were in inner London, parts of outer London also have high poverty rates, notably in Brent, Croydon and Enfield.
+
+#+NAME: my-libraries
+#+BEGIN_SRC R :exports none :results output silent
+  library(readr)
+  library(ggplot2)
+  library(reldist)
+  library(plyr)
+  library(reshape2)
+  library(data.table)
+  library(scales)
+  library(gridExtra)
+  source("../r/ipf_functions.r")
+  source("chart_style.r")
+  # Definitions of London boroughs, names
+  source("little_helpers.r")
+#+END_SRC
+
+#+NAME: my-secret-setup-umbr
+#+BEGIN_SRC R :exports none :results output silent
+  if ( ! exists("umbr.l") ) {
+    umbr <- read_csv("../../umbr2/umbr14-esw.csv")
+    # LSOA to LA, London only
+    oa.11.lookup <- read_csv("oa_lsoa_msoa_la_lookup.csv")
+    lsoa.2.la.ln <- subset(oa.11.lookup,
+                           ! duplicated(LSOA11CD) &
+                           (LAD11NM %in% borough.defs$LA.NAME))
+    umbr.l <- merge(umbr, lsoa.2.la.ln,
+                    by.x="Geogcode", by.y="LSOA11CD")
+    umbr.l <- merge(umbr.l, borough.defs,
+                    by.x="LAD11NM", by.y="LA.NAME")
+  }
+
+  # Hexagon design
+  if ( ! exists("umbr.hex") ) {
+      # Centroids
+      lsoa.hexes <- read_csv("hex_lsoa_memberships.csv")
+
+      umbr.hex <- data.table(merge(umbr.l, lsoa.hexes,
+                                   by.x="Geogcode", by.y="lsoa"))
+      # The ggplot map outlines to go with this
+      base.hex <- read_csv("hex_outlines_hexes.csv")
+      la.hex <- read_csv("hex_outlines_la.csv")
+      nuts3.hex <- read_csv("hex_outlines_nuts3.csv") # This is old NUTS!
+  }
+#+END_SRC
+
+#+NAME: fig:umbr-distribution
+#+BEGIN_SRC R :results output graphics :file fig/umbr-hex-distr.pdf :width 4.5 :height 3.5
+  hex.rates <- umbr.hex[,list("All.MTB"=sum(All.MTB, na.rm=TRUE),
+                              "Hholds"=sum(Hholds, na.rm=TRUE)),
+                        by=c("Year", "hex.id")]
+  hex.rates[,UMBR:=All.MTB/Hholds]
+
+  hex.toplot <- merge(base.hex, hex.rates, by.x="id", by.y="hex.id")
+  hex.toplot <- subset(hex.toplot, Year %in% c(2001, 2006, 2009, 2013))
+
+  # Must be in correct order to plot correctly
+  hex.toplot <- hex.toplot[order(hex.toplot$Year,
+                                 hex.toplot$id,
+                                 hex.toplot$order),]
+
+  ggplot(data=hex.toplot, aes(x=long, y=lat, group=group)) +
+      geom_polygon(aes(fill=UMBR), alpha=1) +
+      scale_fill_gradientn("UMBR", colours=c(blue, grey.1, red.1,  red.2, red.3),
+                           guide="colorbar", label=percent) +
+      geom_polygon(data=la.hex, aes(group=la),
+                   fill="transparent", colour=white, size=0.25) +
+      geom_polygon(data=nuts3.hex, aes(group=n3),
+                   fill="transparent", colour=white, size=1) +
+      facet_wrap(~Year) +
+      coord_equal() +
+      the_map_theme_legend_right
+#+END_SRC
+
+#+LABEL: fig:umbr-distribution
+#+CAPTION[Map of distribution of UMBR poverty proxy rate in London since 2001]: Distribution of UMBR poverty proxy rate in London, 2001, 2005, 2009 and 2013. The approximate outlines of the NUTS3 divisions are shown in white.
+#+RESULTS[1d1b66bca78aa525b3f5e215e26b4a53dc3846df]: fig:umbr-distribution
+[[file:fig/umbr-hex-distr.pdf]]
+
+#+NAME: fig:umbr-hex-change
+#+BEGIN_SRC R :results output graphics :file fig/umbr-hex-change.pdf :width 4.5 :height 2
+  hex.diffs <- merge(subset(hex.rates, Year==2001),
+                     subset(hex.rates, Year==2013),
+                     by="hex.id", suffixes=c(".01", ".13"))
+  hex.d.toplot <- merge(base.hex, hex.diffs, by.x="id", by.y="hex.id")
+  hex.d.toplot <- hex.d.toplot[order(hex.d.toplot$id, hex.d.toplot$order),]
+
+  chg.min <- min(hex.d.toplot$UMBR.13 - hex.d.toplot$UMBR.01)
+  chg.max <- max(hex.d.toplot$UMBR.13 - hex.d.toplot$UMBR.01)
+  # chg.min is roughly double chg.max
+
+  colpal.unbalanced <- c(dark.blue, blue, grey.1, red.2)
+  colpal.breaks <- rescale(c(chg.min, mean(chg.min,0), 0, chg.max))
+ggplot(data=hex.d.toplot, aes(x=long, y=lat, group=group)) +
+    geom_polygon(aes(fill=UMBR.13-UMBR.01), alpha=1) +
+    scale_fill_gradientn("UMBR change\n2001-13",
+                         colours=colpal.unbalanced,
+                         values=colpal.breaks,
+                         labels=percent_format()) +
+        geom_polygon(data=la.hex, aes(group=la),
+                     fill="transparent", colour=white, size=0.25) +
+            geom_polygon(data=nuts3.hex, aes(group=n3),
+                         fill="transparent", colour=white, size=1) +
+                coord_equal() +
+                    the_map_theme_legend_right
+#+END_SRC
+
+#+LABEL: fig:umbr-hex-change
+#+CAPTION[Map of changes in the UMBR poverty proxy rate 2001 - 2013]: Changes in the UMBR poverty proxy rate, showing the difference between the 2001 and 2013 rates.
+#+RESULTS[85c1ef08473567f5f001fa56804c8061d92bb8e2]: fig:umbr-hex-change
+[[file:fig/umbr-hex-change.pdf]]
+
+The maps also show, however, the changes in this distribution over the period examined here. The poverty proxy rate fell sharply in the areas of its highest concentration in inner East London, which is consistent with, for example, trends in official deprivation indices[[cite:leeser_english_2011][;]]. In the same time period, poverty rates have risen in several parts of outer London, above all in those parts which started the period relatively deprived in comparison to outer London as a whole. This change is brought out clearly in figure \ref{fig:umbr-hex-change}. In the most-changed parts of inner London, UMBR rates fell by as much as 12 percentage points (for reference, the most deprived parts of inner East London having rates in 2001 in the range of 30 to 40).
+
+#+NAME: fig:umbr-nuts-changes
+#+BEGIN_SRC R :results output graphics :file fig/umbr-nuts3-changes.pdf :width 4.5 :height 2.5
+  umbr.l.dt <- data.table(umbr.l)
+
+  inout <- data.table(umbr.l)[,sum(All.MTB, na.rm=TRUE) /
+                                  sum(Hholds, na.rm=TRUE),
+                              by=c("Year","NUTS2")]
+  inout$NUTS2 <- gsub(" - ", "\n", inout$NUTS2)
+
+  my.nuts.pal <- c(dark.blue, red.3, blue, grey.2, red.2)
+  ggplot(inout, aes(x=Year, y=V1)) +
+  geom_line(aes(colour=NUTS2), linetype=1, size=1) +
+  geom_smooth(method="lm", aes(colour=NUTS2),
+              se=FALSE, linetype=3, size=1) +
+  scale_colour_manual("", values=my.nuts.pal) +
+  labs(x="Year", y="UMBR") +
+  theme(legend.position="right")
+#+END_SRC
+
+#+LABEL: fig:umbr-nuts-changes
+#+CAPTION[UMBR rates by NUTS3 areas, 2001 to 2013]: UMBR aggregate rates by NUTS3 areas, 2001 to 2013.
+#+RESULTS[4af4cabacdd1f494a43e7b9a97ff848d6d07bb78]: fig:umbr-nuts-changes
+[[file:fig/umbr-nuts3-changes.pdf]]
+
+The underlying trend is made yet clearer in figure \ref{fig:umbr-nuts-changes} by charting the aggregate UMBR rate for the five NUTS2 areas over the 2000s. Inner East London saw sharply falling poverty rates, whilst all three Outer London areas had rising poverty. Inner and Outer East London appear to be rapidly converging. The effects of the recession show up here as a rise in the poverty rate (primarily due to increases in the number of Job-Seeker's Allowance claims). This rise was greater in Outer London, and the recovery from it slower; in most of Inner London, the benefit-based proxy had not, by 2013, reached its pre-recession low.
+
+** Population growth, densification and valorisation of housing
+It is important to note that the poverty proxy rates in many of the poorest neighbourhoods fell primarily not because the /number/ of poor people (the numerator of the UMBR rate), decreased, but because there were large increases in the total households in the area (the denominator of the UMBR rate). There is a consistent relationship between dwelling density, poverty, and increase in population over the period. The poorest neighbourhoods in 2001 were those most densely built-up with dwellings. These same dense, poor, inner London neighbourhoods were subject to the greatest increases in density through net additions to the dwelling stock. The  net upward change in total population in these areas was much greater than growth in the poor population, as measured by UMBR.
+
+In the relatively deprived neighbourhoods of Outer London by contrast, increases in the poor population were of similar size to the increases in the household totals, and poverty rates rose. As figure \ref{fig:household-increase} shows, few parts of Outer London experienced anything like the intensity of development and net additions to the household population. The most intense development of housing occurred in the former Docklands, and in parts of Tower Hamlets, Hackney and Islington — i.e., surrounding the two main financial districts of London, the City and the Docklands.
+
+#+NAME: fig:household-increase
+#+BEGIN_SRC R :results output graphics :file fig/umbr-households.pdf :width 4.5 :height 2
+  chg.min <- min(hex.d.toplot$Hholds.13 / hex.d.toplot$Hholds.01 - 1)
+  chg.max <- max(hex.d.toplot$Hholds.13 / hex.d.toplot$Hholds.01 - 1)
+
+  ggplot(data=hex.d.toplot, aes(x=long, y=lat, group=group)) +
+      geom_polygon(aes(fill=Hholds.13/Hholds.01-1), alpha=1) +
+          scale_fill_gradientn("Households % increase",
+                               colours=colpal.diverging,
+                               values=rescale(c(chg.min, 0, chg.max))) +
+              geom_polygon(data=nuts3.hex, aes(group=n3), fill="transparent", colour="white", size=1) +
+              geom_polygon(data=la.hex, aes(group=la), fill="transparent", colour="white", size=0.25) +
+                  coord_equal() +
+                      the_map_theme_legend_right
+#+END_SRC
+
+#+LABEL: fig:household-increase
+#+CAPTION[Map of household growth 2001-2013]: Proportional change in the total number of households 2001 to 2013 (based on the UMBR dataset).
+#+RESULTS[8978138795b67210ec616706e11c2ddd9e4139d1]: fig:household-increase
+[[file:fig/umbr-households.pdf]]
+
+Furthermore, this housing, as with that of developments further west on the river Thames, was of high value relative to what stood there at the start of the period under study. Figure \ref{fig:dwelling-value-change} uses Council Tax banding information to show this upward shift in mean values in inner East London and along the riverside. Council Tax bandings are preferred here to market sale prices as a measure of dwelling value because they are assessed from the notional price at a fixed point in time, thus making values comparable without need to adjust for overall house price inflation. Thus the shifts in mean value here reflect only the effects of demolitions and additions to the housing stock: what kind of housing was built, and what kind of housing was removed.
+
+#+NAME: fig:dwelling-value-change
+#+BEGIN_SRC R :results output graphics :file fig/dwell-value.pdf :width 4.5 :height 2
+  dw.01 <- read.delim("../data/lnd-ctax_band-lsoa-2001.tab", skip=5)
+  dw.01 <- dw.01[,c(1:10, 13, 14, 16, 18, 20, 22, 24, 26, 28, 30)]
+  colnames(dw.01)[11:20] = c("All", LETTERS[1:8], "X")
+  dw.01$value.tot <- apply(dw.01[,LETTERS[1:8]], 1,
+                           function(x) sum(x * 1:8) )
+  dw.01$mean.band <- apply(dw.01[,LETTERS[1:8]], 1,
+                           function(x) sum(x * 1:8) / sum(x) )
+
+  dw.11 <- read.delim("../data/lnd-ctax_band-lsoa-2011.tab", skip=5)
+  dw.11 = dw.11[,c(11, 15, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34)]
+  colnames(dw.11)[2:12] = c("All", LETTERS[1:8], "I", "X")
+  dw.11$value.tot <- apply(dw.11[,LETTERS[1:8]], 1,
+                           function(x) sum(x * 1:8) )
+  dw.11$mean.band <- apply(dw.11[,LETTERS[1:8]], 1,
+                           function(x) sum(x * 1:8) / sum(x) )
+
+  dw <- merge(dw.01, dw.11, by="LSOA_CODE",
+              all.y=FALSE, suffixes=c(".01", ".11"))
+  hex.01 <- read.csv("hex_lsoa01_memberships.csv")
+  dw.hex <- merge(dw, hex.01, by.x="LSOA_CODE", by.y="LSOA01CD")
+  hex.tots <- aggregate(cbind(All.01, All.11,
+                              value.tot.01, value.tot.11)~hex.id, dw.hex, sum)
+
+  hex.tots$mean.value.01 <- with(hex.tots, value.tot.01/All.01)
+  hex.tots$mean.value.11 <- with(hex.tots, value.tot.11/All.11)
+  hex.tots$value.change <- with(hex.tots, mean.value.11 - mean.value.01)
+
+  hx.to.plot <- merge(hex.tots, base.hex, by.x="hex.id", by.y="id")
+  hx.to.plot <- hx.to.plot[order(hx.to.plot$hex.id, hx.to.plot$order),]
+
+  ggplot(data=hx.to.plot, aes(x=long, y=lat, group=group)) +
+      geom_polygon(aes(fill=value.change), alpha=1) +
+          scale_fill_gradientn("Mean Tax Band shift",
+                               colours=colpal.diverging) +
+              geom_polygon(data=nuts3.hex, aes(group=n3), fill="transparent", colour="white", size=1) +
+                  geom_polygon(data=la.hex, aes(group=la), fill="transparent", colour="white", size=0.25) +
+                      coord_equal() +
+                          the_map_theme_legend_right
+#+END_SRC
+
+#+LABEL: fig:dwelling-value-change
+#+CAPTION[Map of shift in mean dwelling value, 2001 to 2011]: Shift in mean dwelling value, based on Council Tax records, 2001 to 2011.
+#+RESULTS[5fa03bcbeabbe117a22813987f0d13e714190300]: fig:dwelling-value-change
+[[file:fig/dwell-value.pdf]]
+
+To summarise our results thus far: we cannot judge what proportion of the increased counts of poverty (proxied here by social security benefits) in outer London are the consequence of moves by poor households from inner to outer London. We can, however, be certain that the spatial distribution of net additional poor households was markedly different to the prior distribution of poverty. Additional information on household growth and dwelling value change in high-poverty areas of inner London confirm the distinct pattern of investment in land and housing, on sites that "evince that mix of relative deprivation and development potential which promises a substantial uplift in value, given the right catalytic boost."[[cite:keddie_market_2010][p58;]]
+
+Given the influence in some areas of net additional housing upon poverty rates, it should be acknowledged that there has been a debate about whether "new build gentrification" might be regarded as benign, because it does not appear to directly displace existing residents[[cite:davidson_new-build_2010][;A summary, and a case "against" new-build gentrification can be found in]]. Major housing developments in London included both formerly industrial or commercial land, and sites with large amounts of existing social housing. The dwelling stock data used here offer opportunities to pursue this question further, but this must be taken up elsewhere. We turn instead to the simulation estimates, to examine the apparent redistribution of poverty to outer London more closely.
+* The Changing Structure of Poverty
+Whilst small-area proxies allow investigation of the fine spatial distribution of poverty, they also omit pertinent information. In the current context perhaps the most important of these is the effect of housing costs on the adequacy of incomes that households have left for consumption, and hence the prevalence of in-work poverty. UMBR directly counts only low-income households receiving out-of-work income-replacement benefits, whilst research such as the /Poverty Profiles/ points to the sharply rising proportion of the poor who are poor /despite/ being in work. A different approach is necessary to acccount for the effects of such changes on the composition of poverty on its spatial distribution.
+
+The remaining results presented in this paper come from borough-level income and poverty simulations using /Households Below Average Income/ and census data. The simulations employ a standard notion of reported income from all sources (earnings, benefits, investments), which is deemed shared within a benefit unit (roughly, a family), adjusted for the number of adults and children who live on that income, and measured after housing costs have been deducted in order to give a residual income available for consumption. A person is defined as poor when the benefit unit of which they are a member has such an income which is less than 60% of the national median[fn:4]. These simulations imply London-wide poverty rates and income distributions that are consistent with, though not identical to those derived directly from HBAI; the accompanying paper looks at this in more detail[fn:1]. 
+
+#+NAME: setup-simulations
+#+BEGIN_SRC R :exports none :results silent
+  setwd("../ipf")
+
+  # Load the HBAI datasets
+  if ( ! exists("hbai.01.ln") ) {
+      source("frs_2001-load_recode.r")
+      hbai.01.ln <- subset(hbai, GVTREGN==8)
+  }
+  if ( ! exists("hbai.11.ln") ) {
+      source("frs_2011-load_recode.r")
+      hbai.11.ln <- subset(hbai, GVTREGN==8)
+  }
+
+  # Some variable definitions
+  tenures <- c(rep("Soc Rent",2),rep("Pvt Rent", 2),
+               rep("Own", 2), "Pvt Rent")
+  hbai.01.ln$tenure.3 <- tenures[hbai.01.ln$TENTYPE]
+  hbai.11.ln$tenure.3 <- tenures[hbai.11.ln$PTENTYP2]
+
+
+  working <- c(rep("Working",5), "Not Wkg Age",
+               rep("Workless",2))
+  hbai.01.ln$workless.bu <- working[hbai.01.ln$ECOBU]
+  hbai.11.ln$workless.bu <- working[hbai.11.ln$ECOBU]
+
+  # Sims to count number of benefit units and people, whole population
+  if ( ! exists("nonexistent") ) { # Always remake
+      newts.01 <- read.csv("../ipf/weights/london_la_2001-multilev_with_stwts.csv",
+                           row.names=1)
+
+      colnames(newts.01) <- gsub("\\.", " ", colnames(newts.01))
+      sims.01.bu <- area.simulations(newts.01, hbai.01.ln, "SERNUM")
+      sims.01.ppl <- area.simulations(newts.01, hbai.01.ln, "SERNUM",
+                                      with(hbai.01.ln, G_NEWPP / G_NEWBU) )
+      # Poor households only
+      hbai.01.poor <- subset(hbai.01.ln, LOW60AHC==1)
+      pov.sim.01 <- area.simulations(newts.01, hbai.01.poor, "SERNUM",
+                                     with(hbai.01.poor, G_NEWPP / G_NEWBU))
+  }
+
+  if ( ! exists("nonexistent") ) { # Always remake
+      newts.11 <- read.csv("../ipf/weights/london_la_2011-multilev_with_stwts.csv",
+                           row.names=1)
+      colnames(newts.11) <- gsub("\\.", " ", colnames(newts.11))
+      sims.11.bu <- area.simulations(newts.11, hbai.11.ln, "SERNUM")
+      sims.11.ppl <- area.simulations(newts.11, hbai.11.ln, "SERNUM",
+                                      with(hbai.11.ln, G_NEWPP / G_NEWBU) )
+      # For looking at the composition of poor households
+      hbai.11.poor <- subset(hbai.11.ln, LOW60AHC==1)
+      pov.sim.11 <- area.simulations(newts.11, hbai.11.poor, "SERNUM",
+                                     with(hbai.11.poor, G_NEWPP / G_NEWBU))
+  }
+
+  setwd("../paper")
+
+
+  # Helper function for packing out borough-by-NUTS2 charts so that they look nice and griddy. Expects a standared melted data.frame with two id.vars representing the upper (NUTS2) and lower (LA) levels. Pads out with empty rows so that there are an identical number of lower levels per upper level.
+  pad.with.stuff <- function(df, upper.group, lower.group,
+                             dummy.value=0) {
+      out.df <- df
+      members <- tapply(df[,lower.group], df[,upper.group],
+                        function(l) length(unique(l)))
+      for ( u.grp in names(members) ) {
+          pad.len <- max(members) - members[[u.grp]]
+          if ( pad.len == 0 )  { next }
+          pad <- data.frame(variable=df[,"variable"][1],
+                            value=rep(dummy.value, pad.len))
+          pad[,upper.group] <- u.grp
+          pad[,lower.group] <- sapply(1:pad.len,
+                                      function(i) paste(rep(" ", i),
+                                                        collapse=""))
+          out.df <- rbind(out.df, pad)
+      }
+      out.df
+  }
+#+END_SRC
+
+The changes in borough poverty rates and income now presented reflect a wide variety of effects over a decade, including the movement of people, the changing circumstances of households, altered tax and benefit regimes, conditions in the labour market, and changes to the housing stock. Since the estimation method relies on population census data, the time periods compared are 2001 (using 2001 Census data and HBAI 2001/02) and 2011 (using that year's Census and HBAI 2011/12).
+
+These particular time points have some bearing on the analysis. Median real income AHC rose in London from 2001/02 up until 2007/08, but then fell back sharply, such that it was no higher at the end of the period than the start[fn:3]. Mean real income, which, unlike the median, is influenced by the values of top incomes, in fact fell over the decade as a whole. Changes in borough median income plotted in figure \ref{fig:median-income-change} nicely illustrate the net effects of the period of growth and the first years of the recession. Median incomes in the poorest boroughs were flat over the decade, whilst median incomes fell more sharply in more wealthy boroughs[fn:5]. The lowest-income boroughs in inner London had the lowest shares of household income deriving from earnings, whilst income from benefits was relatively protected against inflation in the early pre-coalition phase of the recession.
+
+#+NAME: fig:median-income-change
+#+BEGIN_SRC R  :results output graphics :file fig/income_change-boroughs-2001_11.pdf :width 4.5 :height 3.5
+  deflators.bhc <- c("2001"=172.9, "2011"=234.7)
+  deflators.ahc <- c("2001"=164.5, "2011"=222.0)
+
+  mds <- merge(area.sim.quantiles(sims.01.ppl, ~S_OE_AHC),
+               area.sim.quantiles(sims.11.ppl, ~S_OE_AHC),
+               by=0, suffixes=c(".01", ".11") )
+  mds$Y2001.median.inflated <- mds[,"0.5.01"] * deflators.ahc["2011"] / deflators.ahc["2001"]
+  mds$Y2011.median <- mds[,"0.5.11"]
+
+  ## area.sim.means(sims.01.bu, ~S_OE_AHC)
+  ## area.sim.means(sims.11.bu, ~S_OE_AHC)
+
+  # Earned vs total net income
+  earn.comp <- do.call(rbind, lapply(sims.01.bu, svytotal,
+                                     x=~ENTERNBU+HNTINCBU))
+  mds$earn.prop <- earn.comp[,1] / rowSums(earn.comp)
+
+  mds.with.codes <- merge(mds, borough.defs, by.x="Row.names", by.y="LA.NAME")
+
+  ggplot(mds.with.codes, aes(x=Y2001.median.inflated,
+                  y=Y2011.median,
+                  colour=earn.prop,
+                  shape=InOutLondon)) +
+      geom_abline(aes(slope=1), linetype=3) +
+      geom_point() +
+      scale_x_continuous("2001 Income  (equivalised, AHC, 2011/12 prices)") +
+      scale_y_continuous("2011 Income (equivalised, AHC)") +
+      scale_colour_gradientn("Prop. net income\nfrom earnings, 2001",
+                             colours=colpal.diverging.darker) +
+      scale_shape_manual("", values=c(16,15)) +
+      coord_equal()
+#+END_SRC
+
+#+LABEL: fig:median-income-change
+#+CAPTION[Borough estimated real median incomes, 2001 and 2011]: Borough real median incomes (AHC, equivalised), 2001 and 2011. Points are shaded according to the proportion of net household income derived from earnings in 2001.
+#+RESULTS[982b9867e2490511ac28f0e906f0301ffa0d4962]: fig:median-income-change
+[[file:fig/income_change-boroughs-2001_11.pdf]]
+
+As well as illustrating the spatially differentiated effects of recession and of the social security net, this is a reminder that the simulations compare two snapshots. The comparison is unavoidably coloured by the particular circumstances of each time, as well as showing longer-term trends. Some remarks on developments since 2011/12 are offered in the conclusion.
+** Poverty change by district
+Reprising the preceding analysis of the changing spatial distribution of poverty, figure \ref{fig:pov-change-boroughs} charts boroughs' poverty rates from the simulation in 2001 against their rate in 2011. Boroughs below and right of the dotted line had falling poverty rates, boroughs above and to the left, rising. This provides broad confirmation of the results of the analysis of the UMBR poverty proxy measure, using a set of sources independent of it. The poorest boroughs in both 2001 and 2011 were in inner East London, successively Newham, Tower Hamlet and Hackney, each with AHC poverty rates of greater than 40%. However, poverty rates fell in all inner East boroughs, most markedly in Islington and Hackney.
+
+#+NAME: fig:pov-change-boroughs
+#+BEGIN_SRC R :exports results :results output graphics :file fig/pov_change-boroughs-2001_11.pdf :width 4.5 :height 3
+  pov <- merge(area.sim.table(sims.01.ppl, ~LOW60AHC),
+               area.sim.table(sims.11.ppl, ~LOW60AHC),
+               by=0, suffixes=c(".01",".11"))
+
+  pov$pov.01 <- pov[,3] / rowSums(pov[,2:3])
+  pov$pov.11 <- pov[,5] / rowSums(pov[,4:5])
+
+  pov <- merge(pov, borough.defs, by.x="Row.names", by.y="LA.NAME")
+  pov$NUTS2 <- factor(pov$NUTS2,
+                      levels = c("Inner - East",
+                          "Outer - East & NE",
+                          "Outer - South",
+                          "Inner - West",
+                          "Outer - West & NW") )
+
+  # Label selected boroughs
+  interesting.boroughs <- c("Newham", "Hackney", "Tower Hamlets", "Islington",
+                            "Enfield", "Croydon", "Hillingdon", "Camden",
+                            "Brent", "Greenwich", "Kingston upon Thames",
+                            "Haringey", "Westminster", "Ealing")
+  pov$label <- ifelse(pov$Row.names %in% interesting.boroughs,
+                      pov$LA.ABBR3, "")
+
+  my.nuts.pal <- c(dark.blue, red.3, blue, grey.2, red.2)
+  ggplot(pov, aes(x=pov.01, y=pov.11) ) +
+      geom_abline(intercept=0, slope=1, linetype=3) +
+      geom_point(aes(colour=NUTS215NM)) +
+      geom_text(aes(label=label), size=2, hjust=-0.2) +
+      scale_x_continuous("Poverty rate (people, AHC) 2001",
+                         limits=c(0.15, 0.5)) +
+      scale_y_continuous("Poverty rate (people, AHC) 2011",
+                         limits=c(0.15, 0.5)) +
+      scale_colour_manual(values=my.nuts.pal) +
+      coord_equal() +
+      facet_wrap(~NUTS2, ncol=3) +
+      guides(colour=FALSE)
+#+END_SRC
+
+#+LABEL: fig:pov-change-boroughs
+#+CAPTION[Change in borough poverty rates, 2001 to 2011]: Change in poverty rates (<60% national median income, equivalised after housing costs) by borough, 2001 to 2011.
+#+RESULTS[b55f83452ac8fc16158605b3855fafb13dffd50d]: fig:pov-change-boroughs
+[[file:fig/pov_change-boroughs-2001_11.pdf]]
+
+By contrast, poverty rates rose in all of the boroughs in West and South outer London, and rose the most in the outer boroughs of Croydon (S), Enfield (N/NE) and Hillingdon (W/NW). The changes, of a few percentage points at most, appear less dramatic than the results presented based on the UMBR dataset. This reflects in part the greater spatial detail of the UMBR dataset. Even grouped into hexagonal zones, as above, it picks out "hot-spots" of gentrification that are less apparent in borough-level measures. It is also because of differences in measurement, and that poverty in inner London has been recomposed, rather than simply dispersed to the suburbs.
+
+However, the borough results also largely confirm the spatial redistribution of poverty from the proxy analysis, and imply that some boroughs at least have experience considerable change  in deprivation relative to other boroughs since 2001. Islington, for example, which featured in the England-wide "top five" of deprivation extent and rank in the 2004 Indices of Multiple Deprivation, now has a poverty rate lower than outer boroughs like Enfield, Redbridge, Hillingdon and Croydon, which did not appear in the top 50[[cite:noble_english_2004][p103ff;]]. The 2011 poverty rate in Brent is now similar to that in Hackney, which has consistently been identified by deprivation indices as one of the most deprived local authorities in England.
+
+#+NAME: tab:nuts3-pov-rates
+#+BEGIN_SRC R :exports results :results output latex
+  pov.counts <- c("NP.01", "P.01", "NP.11", "P.11")
+  colnames(pov)[1] <- "la"
+  colnames(pov)[2:5] <- pov.counts
+
+  pov.n3 <- aggregate(cbind(NP.01,P.01,NP.11,P.11)~NUTS2, pov, sum)
+  pov.n2 <- aggregate(cbind(NP.01,P.01,NP.11,P.11)~InOutLondon, pov, sum)
+  names(pov.n3)[1] <- names(pov.n2)[1] <- "Area"
+
+  pov.nuts <- with(rbind(pov.n3, pov.n2),
+                   data.frame(row.names=Area,
+                              pov.rate.01=P.01/(NP.01+P.01),
+                              pov.share.01=P.01/sum(P.01)*2,
+                              pov.rate.11=P.11/(NP.11+P.11),
+                              pov.share.11=P.11/sum(P.11)*2 ) )
+
+  pov.nuts <- pov.nuts[order(as.character(row.names(pov.nuts))),]
+
+  latex.glove(pov.nuts,
+              caption="Poverty rates and shares in NUTS areas of London, 2001 and 2011",
+              label="tab:nuts3-pov-rates",
+              title="Area",
+              n.rgroup=c(3,4), rgroup=c("Inner", "Outer"),
+              n.cgroup=c(2,2), cgroup=c("Poverty 2001", "Poverty 2011"),
+              colheads=rep(c("Rate", "Share"),2),
+              digits=2)
+#+END_SRC
+
+Table \ref{tab:nuts3-pov-rates} summarises the position by NUTS2 areas in 2001 and 2011, and can be compared to the previous figure \ref{fig:umbr-nuts-changes}. The broad trend is confirmed, of poverty rates falling in inner East, and rising in all other areas. The convergence of rates implies a greater dispersion of poverty. A key difference to the UMBR results is that poverty rates here appeared to rise the most in outer West and South London, rather than in outer East. The following disaggregations of the poverty rate help to account for this difference.
+** Composition of poverty - economic status
+One of the most marked changes in the structure of poverty in Britain over the 2000s was the sharply increased proportion of the poor who are poor despite there being an adult in work in the household[fn:6]. Given that in London, the relation of housing costs to wages plays an especially important role for accouting for poverty rates, we might expect this national change to have had distinct local consequences. Figure \ref{fig:economic-status-borough} gives a decomposition of the effects of this shift by borough. It shows the net change in the number of the poor in each borough, according to whether there is any working-age adult in employment in that benefit unit.
+
+Apparent overall is the trend for out-of-work poverty to fall, and for in-work to increase. The balance between these tendencies is, however, very different from borough to borough. In sharply gentrifying boroughs, notably Islington, Camden and Hackney, the absolute falls in workless poverty were greater than the rise in in-work poverty; this, combined with the increases in the size of the resident population, accounts for the sharp falls in poverty rates in these boroughs. In other parts of inner East London, such as Tower Hamlets, Newham and Southwark, increases in in-work poverty more than offset falling numbers out of work. The more modest falls in overall poverty rates in these boroughs are thus attributable to the growth in population, and reductions in poverty among those above working age (not shown in the figure).
+
+#+NAME: fig:economic-status-borough
+#+BEGIN_SRC R :exports results :results output graphics :file fig/econstat_borough.pdf :width 4.5 :height 5
+  ecstat.01 <- area.sim.table(pov.sim.01, ~ECOBU)
+  ecstat.11 <- area.sim.table(pov.sim.11, ~ECOBU)
+
+  wkls.01 <- data.frame(workful=rowSums(ecstat.01[,1:5]),
+                        pens=ecstat.01[,6],
+                        workless=rowSums(ecstat.01[,7:8]))
+  wkls.11 <- data.frame(workful=rowSums(ecstat.11[,1:5]),
+                        pens=ecstat.11[,6],
+                        workless=rowSums(ecstat.11[,7:8]))
+
+  wrk.cmp <- merge(wkls.01, wkls.11, by=0, suffixes=c("01", "11"))
+  wrk.cmp <- merge(wrk.cmp, borough.defs, by.x="Row.names", by.y="LA.NAME")
+
+  wrk.cmp$workful.chg <- wrk.cmp$workful11 - wrk.cmp$workful01
+  wrk.cmp$workless.chg <- wrk.cmp$workless11 - wrk.cmp$workless01
+
+  foo <- melt(wrk.cmp, id.vars=c("LA.SHORTNAME", "NUTS2"),
+              measure.vars=c("workful.chg", "workless.chg") )
+  foo.o <- pad.with.stuff(foo, "NUTS2", "LA.SHORTNAME", 0)
+
+  ggplot(foo.o, aes(x=LA.SHORTNAME, group=variable, y=value/1000, fill=variable)) +
+      geom_bar(stat="identity", position="dodge") +
+      scale_x_discrete("") +
+      scale_fill_manual("", values=colpal.qual,
+                        labels=c("\"Working\" households", "\"Workless\" households")) +
+      scale_y_continuous("People (thousands)") +
+      facet_wrap(~NUTS2, scales="free_x", ncol=1) +
+      theme(legend.position="bottom")
+#+END_SRC
+
+#+LABEL: fig:economic-status-borough
+#+CAPTION[Borough change in poverty, by economic status of benefit unit]: Net change in total people in poverty, by economic status of benefit unit, by borough, 2001-2011. Only benefit units with a working-age representative person are shown.
+#+RESULTS[d2a400a05e6d7373a32d84612f4dc453a81fb5d5]: fig:economic-status-borough
+[[file:fig/econstat_borough.pdf]]
+
+In the boroughs of outer London, falls in out-of-work poverty were small or minimal. In two of the most strongly "declining" boroughs, Enfield and Hillingdon, there were small increases in the absolute numbers in out-of-work poverty. The major changes to poverty rates in outer London are the consequences not of changes in worklessness, but by very large increases in in-work poverty. Rises in private housing costs, relative to the wages of lower-income workers, impoverished tens of thousands of households in these boroughs.
+
+As before, these are comparisons of cross-sections at two time points, which do not allow us to attribute importance to the relative effects of local changes in labour markets, wages and housing costs, and population movement into and out of each borough . This cross-sections do make much clearer that it is not only the distribution of poverty, but its composition that has changed. Even in the most strongly gentrifying boroughs, rising in-work poverty has tempered the effects of falling worklessness, whilst in outer London, it has outweighed and magnified changes to rates of worklessness in contributing to rising poverty.
+** Composition of poverty - housing tenure
+Gentrification in London in the 2000s was marked not, as in classic accounts, by the replacement of renting by owner-occupation, but by the rapid expansion of private renting. At the same time, social rented housing declined in share and importance as a means of providing housing to low-income households, whilst state subsidies to private rents through Local Housing Allowance (Housing Benefit) increased. Alongside this, the gap between poverty rates before and after housing costs grew ever wider. And in the undermining of real incomes and living standards in the period since the recession, it appears that low-income private tenants have fared especially badly [[cite:vizard_changing_2015][p19, p42;]].
+
+These interlocking changes in the composition of poverty and the distribution of housing have played out differently across London. Figure \ref{fig:poverty-tenure-change} presents the net absolute change in the population in poverty in each borough by housing tenure. The unambiguously gentrifying boroughs of inner east London again present a distinct pattern.  The numbers in low income in social housing fell - in some boroughs, like Southwark, because social housing was sold off or demolished in greater quantity than it was replaced - but also because the relative circumstances of social tenants somewhat improved. Social renting remained in 2011/12 much the poorest housing tenure, but poverty rates fell, whilst rates of poverty among private tenants and owner-occupiers increased. Despite these changes, even in 2011 a majority of low-income people in gentrifying boroughs, as in inner London as a whole, were social tenants.
+
+#+NAME: fig:poverty-tenure-change
+#+BEGIN_SRC R :exports results :results output graphics :file fig/pov_tenure_change.pdf :width 4.5 :height 5
+  ten.cmp <- merge(area.sim.table(pov.sim.01, ~tenure.3),
+                   area.sim.table(pov.sim.11, ~tenure.3),
+                   by=0, suffixes=c(".01", ".11"))
+
+  ten.cmp$sr.chg <- ten.cmp[,"Soc Rent.11"] - ten.cmp[,"Soc Rent.01"]
+  ten.cmp$pr.chg <- ten.cmp[,"Pvt Rent.11"] - ten.cmp[,"Pvt Rent.01"]
+  ten.cmp$oo.chg <- ten.cmp[,"Own.11"] - ten.cmp[,"Own.01"]
+
+  ten.cmp <- merge(ten.cmp, borough.defs, by.x="Row.names", by.y="LA.NAME")
+
+  # ten.cmp.0 <- melt(ten.cmp, id.vars=c("LA.SHORTNAME", "NUTS215NM", "LA.ABBR3"),
+  ten.cmp.0 <- melt(ten.cmp, id.vars=c("LA.SHORTNAME", "NUTS215NM"),
+                    measure.vars=c("sr.chg","pr.chg","oo.chg"))
+  ten.cmp.0 <- pad.with.stuff(ten.cmp.0, "NUTS215NM", "LA.SHORTNAME")
+
+  ggplot(ten.cmp.0,
+         aes(x=LA.SHORTNAME, y=value/1000, group=variable, fill=variable)) +
+         geom_bar(stat="identity", position="dodge") +
+         scale_x_discrete("") +
+         scale_y_continuous("People (thousands)") +
+         scale_fill_manual("", labels=c("Social Rented", "Private Rented", "Owner Occupied"), values=colpal.qual) +
+         facet_wrap(~NUTS215NM, ncol=1, scales="free_x")
+#+END_SRC
+
+#+LABEL: fig:poverty-tenure-change
+#+CAPTION[Borough change in people in poverty, by housing tenure]: Net change in total people in poverty, by housing tenure, by boroughs 2001 to 2011.
+#+RESULTS[b4f03985456c8f4c01fde1a7eb3052d7fc43fa21]: fig:poverty-tenure-change
+[[file:fig/pov_tenure_change.pdf]]
+
+in the relatively declining boroughs of outer London, the increases in the population of low households has been almost entirely within private housing. This is again in part attributable to the rapid growth of the private rented sector, but also to the high proportion of private tenants - and in some cases, also owner-occupiers - on low incomes in these ares.
+* Discussion
+There is little doubt that certain neighbourhoods and districts in London have changed character rapidly in the years since 2000, even within the space of a few years. One of the purposes of this paper has been to attempt a city-wide and aggregate view of the spatial redistribution of poverty in, and to present this as evidence for gentrification being a generalised and fundamental process, rather than a cultural idiosyncrasy confined to Shoreditch "hotspots" .
+** The scale of the changes
+If, as argued in the introduction, one is prepared to accept the changing spatial distribution of poverty as a yardstick of gentrification, how might one judge the magnitude of the changes over a decade? After all, parts of London now often thought of as little blemished by deprivation - Chelsea, the West End or Notting Hill - were, in recent decades, thought thoroughly disreputable.
+
+A reason for using here multiple independent poverty estimates is to answer more certainly this question of speed and magnitude. It must be granted, then, that the relativities of poverty rates at the scale of boroughs and wide zones of the city have not within a decade been upturned. Inner east London, and the boroughs of Newham and Tower Hamlets foremost within it, were at the end of the period the poorest in London, just as they were at the start. Though the increases in poverty rates in outer London are very consistent, they are in most cases of only a couple of percentage points - "only" here in relation to the statistical certainty with the changes can be measured, rather than in relation to the number of people concerned by the implied effect.
+
+However, the changes within ten years already imply some re-evaluation of the relative position of whole boroughs, with outer London boroughs "overtaking" inner boroughs like Islington, that at the start of the millennium were ranked among the most deprived nationally by official deprivation indices. Furthermore, it does not take much imagination to project the rate of change seen in the last decade a further ten years forward (as the trend lines in figure \ref{fig:umbr-nuts-changes} rather crudely suggest), and to foresee a new urban distribution of poverty. Boroughs like Hackney and Islington may well in the future have become "average", with the poor predominantly housed in the more peripheral - and currently less favoured - boroughs.
+** Deconcentration, segregation and inequality
+Aside from the large-scale, city-wide distribution of poverty - inner as against outer, and the relationship of boroughs to one another - another dimension of the distributions of poverty and of wealth is their degree of spatial concentration. The measurement of concentration, to say nothing of "segregation", can be contentious; yet more so are the interpretations given to poverty concentrations, and the use of "deconcentration" as a justification for policy interventions, as at times was the case in the period under investigation here in Britain.
+
+For this reason the empirical analysis has avoided treating "concentration" and also "inequality" altogether in preference to a cursory treatment, in which measures were simply reported. Nonetheless, it should be consistently apparent from the figures and tables that by most measures in common use, the concentration of poverty, disparities between areas, and intra-area income inequality decreased in the period under consideration. Poverty rates rose most in already relatively deprived parts of outer London, but poverty rates in the poorest areas at the end of the period were much closer to the average than at the start. The effects of the recession on real wages, and the relative protection of basic benefits incomes at the same time meant that measures of income inequality, both London-wide and within London boroughs, tended to fall.
+
+** Growth and the privatisation of poverty
+This spatial deconcentration and suburbanisation of poverty was not only, or even primarily, a result of policies and interventions to deconcentrate poverty, however much these caught the eye of policy-makers and aroused the interest, and sometimes ire, of researchers in the first decade of the 2000s. The analysis above has tried to show how the spatial redistribution of poverty was intimately tied to changes in its structure and composition. Some of these changes - such as sharp falls in poverty incidence among pensioners - can be fairly clearly attributed to targetted increases in the generosity of state support. The changes brought out here can be understood as linked by the /privatisation/ of poverty - albeit, often with the state still facilitator and subsider.
+
+A majority of the poor in London in 2001 were social tenants; ten years later this was no longer the case, with the large increases in poverty in private (although often state-subsidised) housing seen above all in outer London. Similarly, by 2011, a majority of the poor were in that state despite having work, not because they lacked it.  Again - and although we cannot separate the effects of voluntary migration, displacement, and households' changing circumstances, the changes in the structure of poverty have played out differently in the gentrifying and "declining" parts of London.
+
+As remarked at the outset, all this took place against a period of - financial crisis notwithstanding - rapid growth in aggregate prosperity and the rate of value production in London as a whole. It is not novel to argue that London has high rates of poverty because of its prosperity, not (mysteriously) despite it: "Within the global city the dynamics of this particular form of growth produce poverty as well as wealth" [[cite:massey_world_2007][p54-55;]]. Even so, the findings here underline the need for distributional analysis that looks within regional disparities, and that, at a city level, poverty reduction does not inevitably follow the accumulation of wealth.
+** Other Cities
+As London seems to exhibit exceptionalism in its economic and social development, and to attract disproportionate investment and wealth relative to the RUK (Rest of the United Kingdom), so has the capital been disproportionately the subject of research and debate in the public sphere. An important question arising from the preceding analysis is the degree to which the mode of urban development and its consequences for the spatial distribution of poverty reflect London's peculiarities as a world financial centre. The methods and sources deployed here can in principle be extended to other urban contexts. In recent years, researchers have pointed to the distinct interactions of financialisation and welfare reform on the distribution of poverty not only in growing "global cities", but in "shrinking" post-industrial cities in the regions of Western Europe =TODO: REF: Bernt=. Unfortunately in the UK, at least, comparative urban quantitative research is rather dominated by a concern with aggregate economic output, innovation and skills, in which the connection between city structure and economic organisation remains relatively obscure.
+** The Future
+In the preceding remarks which projected the trends of the past decade forward, it was presumed that these would be ten years more of the same. And, because of the limitations of available data, the picture presented is already at the time of writing three or more years out of date. In the sense of the intensifying commodification and up-valuation of land and housing, concentrated in inner London, and the effects here shown on the distribution of poverty, the motive force remains. Even if it does not appear that the national economy has returned to a relatively stable phase of accumulation, development and speculation on inner London land and housing seems well "back on track". And recent promises to compel housing associations to sell their dwellings on demand open up further sections of housing to exchange, which had previously lain largely outside it.
+
+The most consequential changes since the period under analysis are probably those made to welfare benefits, introdued by the Coalition government since 2010, but many taking increasing effect only from 2012 or 2013. These are, on the one hand, a set of national changes to taxes and transfers whose effects are steeply regressive[[cite:browne_effect_2015][;]]. Since these apply the greatest proportional cuts to the already-poor, they may not of course, immediately change the spatial distribution of poverty in London. Among these measures are however ones that have particularly severe implications for the poor in London, such as the cap on total benefits, and caps and cuts to Local Housing Allowance [[cite:hamnett_moving_2010,fenton_spatial_2011,aldridge_londons_2013]]. These measures will have affected precisely the poor who (still) live in the more expensive inner areas of London. When this research is reprised in a decade's time, we may well see not merely a continuation, but a marked acceleration of the progress reported in this paper.
+* References
+\printbibliography[heading=none]
+
+* Footnotes
+
+[fn:2] In 2015 the definition of NUTS areas in London was substantially revised. The former NUTS2 areas of Inner and Outer London were abolished, the five former NUTS3 areas were promoted to NUTS2 areas, and 21 new NUTS3 areas defined, each consisting of one or more boroughs. In this paper, Inner London refers to all the local authorities in the old "Inner" NUTS2 area: the City of London, Camden, Hammersmith and Fulham, Kensington and Chelsea,  Wandsworth and Westminster (Inner London West) plus Hackney, Haringey, Islington, Lambeth, Lewisham, Newham, Southwark and Tower Hamlets (Inner London East).
+
+[fn:3] Table 2.5ts in the supplementary material to the HBAI analysis report gives the official median and mean average incomes by region, based on three-year rolling averages.
+
+[fn:4] The appendices to the published HBAI reports give details of the definitions and procedures used in income measurement, see; [[cite:department_for_work_and_pensions_households_2014][;]].
+
+[fn:5] The data point on the far right hand side with an extremely large fall in real median income is Kensington and Chelsea; the real scale of this change is uncertain.
+
+[fn:6] Table 3.5ts of HBAI's analysis report presents a time series. In 2001/02, 40% of low-income households had an adult in work; by 2011/12 this had reached 53%.
+
+[fn:1] The simulation estimates have high uncertainty at the top of the income distribution, and in boroughs with many extremely high-income households.

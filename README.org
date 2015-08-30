@@ -1,0 +1,34 @@
+#+TITLE: Spatial Microsimulation by Iterative Proportional Fitting in R: Household Income in London
+* Introduction
+This repository presents an implementation and demonstration of spatial microsimulation (SMS) by iterative proportional fitting (IPF) for R-statistics. The implementation includes multi-level and parallel processing of the fitting procedure.
+
+The use of the code is demonstrated by a spatial microsimulation of household income distributions in London's 33 boroughs in the years 2001 and 2011. The package correspondingly includes not only the R functions, but also detailed examples of the fitting procedure, and source code and supporting data for two research papers presenting analyses of the estimated income distributions.
+** Intended uses
+*** Doing microsimulation in R
+R-users who wish to carry out their own simulations using IPF are seeking some starting code with which to this. At the time of writing, no complete implementation of this was found. Particular features of the implementation provided include:
+- "Multi-level" IPF, using constraints and survey data from two observation levels (for example, people and households) to produce weights
+- Versions of the fitting functions that run in parallel, which significantly speeds the fitting process on modern multi-core computers
+- A set of functions for creating tables of estimated statistics (e.g. means, quartiles, totals) using weights for many different areas
+*** Supporting material for the analytic papers
+The papers document how the analyses presented in the papers were performed, how the graphics were produced, and the definitions of variables in the simulation.
+*** Doing analysis of local income distributions of London
+The output weights from the simulations can be used to carry out analyses of borough-level income distributions in 2001 and 2011. For convenience, the fitted weights for London boroughs are included in the repository, under =/ipf/weights/=. The functions in =/r/ipf_functions.r= can be used to set up spatial simulations for each borough and to estimate statistics from them.
+
+Users who wish to use the provided weights to do their own analysis of income distributions in London boroughs will require at least a copy of the /Households Below Average Income/ case-level survey data. Some analyses, and any adaptations to the simulation itself will require a copy of the /Family Resources Survey/ case-level survey data. Both of these are available from the UK Data Archive.
+* Contents
+** R
+Contains the single file =ipf_functions.r=, which provides a set of R functions for carrying out and using iterative proportional fitting (IPF) techniques in a spatial microsimulation. 
+
+Firstly, it provides a set of functions for creating new weights for lists of areas from survey case data and local population totals. Variants include carrying out the reweighting in parallel across multiple cores, and for doing "multi-level" reweighting, where constraints and survey cases at two different levels of observation (e.g. people and households) are combined to create new weights.
+
+Secondly, it provides a fairly simple set of convenience functions for using the simulation weights produced to estimate a variety of statistics across a set of areas. These are heavily based on the =survey= package.
+** IPF
+The R and data files here present the use IPF weighting to carry out a spatial microsimulation of household income in London in 2001 and 2011, using the /Family Resources Survey/ and Census and administrative data.
+** Paper
+* Licence
+
+
+
+
+
+

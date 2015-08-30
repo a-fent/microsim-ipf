@@ -1,0 +1,34 @@
+ONSCODE,LA.NAME,LA.ABBR3,LA.SHORTNAME,InOut,InOutLondon,LAD12CD,NUTS315CD,NUTS315NM,NUTS215CD,NUTS215NM,NUTS2
+00AB,Barking and Dagenham,B&D,Barking & D.,Outer,Outer London,E09000002,UKI52,Barking & Dagenham and Havering,UKI5,Outer London - East and North East,Outer - East & NE
+00AC,Barnet,Bar,Barnet,Outer,Outer London,E09000003,UKI71,Barnet,UKI7,Outer London - West and North West,Outer - West & NW
+00AD,Bexley,Bex,Bexley,Outer,Outer London,E09000004,UKI51,Bexley and Greenwich,UKI5,Outer London - East and North East,Outer - East & NE
+00AE,Brent,Bre,Brent,Outer,Outer London,E09000005,UKI72,Brent,UKI7,Outer London - West and North West,Outer - West & NW
+00AF,Bromley,Bro,Bromley,Outer,Outer London,E09000006,UKI61,Bromley,UKI6,Outer London - South,Outer - South
+00AG,Camden,Cam,Camden,Inner,Inner London,E09000007,UKI31,Camden and City of London,UKI3,Inner London - West,Inner - West
+00AA,City of London,Cty,City of Lon.,Inner,Inner London,E09000001,UKI31,Camden and City of London,UKI3,Inner London - West,Inner - West
+00AH,Croydon,Cro,Croydon,Outer,Outer London,E09000008,UKI62,Croydon,UKI6,Outer London - South,Outer - South
+00AJ,Ealing,Eal,Ealing,Outer,Outer London,E09000009,UKI73,Ealing,UKI7,Outer London - West and North West,Outer - West & NW
+00AK,Enfield,Enf,Enfield,Outer,Outer London,E09000010,UKI54,Enfield,UKI5,Outer London - East and North East,Outer - East & NE
+00AL,Greenwich,Grw,Greenwich,Outer,Outer London,E09000011,UKI51,Bexley and Greenwich,UKI5,Outer London - East and North East,Outer - East & NE
+00AM,Hackney,Hck,Hackney,Inner,Inner London,E09000012,UKI41,Hackney and Newham,UKI4,Inner London - East,Inner - East
+00AN,Hammersmith and Fulham,H&F,Ham.& Ful.,Inner,Inner London,E09000013,UKI33,Kensington & Chelsea and Hammersmith & Fulham,UKI3,Inner London - West,Inner - West
+00AP,Haringey,Hng,Haringey,Inner,Inner London,E09000014,UKI43,Haringey and Islington,UKI4,Inner London - East,Inner - East
+00AQ,Harrow,Hrw,Harrow,Outer,Outer London,E09000015,UKI74,Harrow and Hillingdon,UKI7,Outer London - West and North West,Outer - West & NW
+00AR,Havering,Hav,Havering,Outer,Outer London,E09000016,UKI52,Barking & Dagenham and Havering,UKI5,Outer London - East and North East,Outer - East & NE
+00AS,Hillingdon,Hil,Hillingdon,Outer,Outer London,E09000017,UKI74,Harrow and Hillingdon,UKI7,Outer London - West and North West,Outer - West & NW
+00AT,Hounslow,Hou,Hounslow,Outer,Outer London,E09000018,UKI75,Hounslow and Richmond upon Thames,UKI7,Outer London - West and North West,Outer - West & NW
+00AU,Islington,Isl,Islington,Inner,Inner London,E09000019,UKI43,Haringey and Islington,UKI4,Inner London - East,Inner - East
+00AW,Kensington and Chelsea,K&C,Kens.& Ch.,Inner,Inner London,E09000020,UKI33,Kensington & Chelsea and Hammersmith & Fulham,UKI3,Inner London - West,Inner - West
+00AX,Kingston upon Thames,KgT,Kingston u.T.,Outer,Outer London,E09000021,UKI63,"Merton, Kingston upon Thames and Sutton",UKI6,Outer London - South,Outer - South
+00AY,Lambeth,Lam,Lambeth,Inner,Inner London,E09000022,UKI45,Lambeth,UKI4,Inner London - East,Inner - East
+00AZ,Lewisham,Lew,Lewisham,Inner,Inner London,E09000023,UKI44,Lewisham and Southwark,UKI4,Inner London - East,Inner - East
+00BA,Merton,Mer,Merton,Outer,Outer London,E09000024,UKI63,"Merton, Kingston upon Thames and Sutton",UKI6,Outer London - South,Outer - South
+00BB,Newham,New,Newham,Inner,Inner London,E09000025,UKI41,Hackney and Newham,UKI4,Inner London - East,Inner - East
+00BC,Redbridge,Red,Redbridge,Outer,Outer London,E09000026,UKI53,Redbridge and Waltham Forest,UKI5,Outer London - East and North East,Outer - East & NE
+00BD,Richmond upon Thames,RmT,Richmond u.T.,Outer,Outer London,E09000027,UKI75,Hounslow and Richmond upon Thames,UKI7,Outer London - West and North West,Outer - West & NW
+00BE,Southwark,Sou,Southwark,Inner,Inner London,E09000028,UKI44,Lewisham and Southwark,UKI4,Inner London - East,Inner - East
+00BF,Sutton,Sut,Sutton,Outer,Outer London,E09000029,UKI63,"Merton, Kingston upon Thames and Sutton",UKI6,Outer London - South,Outer - South
+00BG,Tower Hamlets,TwH,Tower Ham.,Inner,Inner London,E09000030,UKI42,Tower Hamlets,UKI4,Inner London - East,Inner - East
+00BH,Waltham Forest,WaF,Waltham F.,Outer,Outer London,E09000031,UKI53,Redbridge and Waltham Forest,UKI5,Outer London - East and North East,Outer - East & NE
+00BJ,Wandsworth,Wan,Wandsworth,Inner,Inner London,E09000032,UKI34,Wandsworth,UKI3,Inner London - West,Inner - West
+00BK,Westminster,Wst,Westminster,Inner,Inner London,E09000033,UKI32,Westminster,UKI3,Inner London - West,Inner - West
