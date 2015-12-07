@@ -118,9 +118,10 @@ la.hexes <- lapply(unique(hex.rates$LA), function(la) {
 la.hexes <- do.call(rbind, la.hexes)
 write.csv(la.hexes, "paper/hex_outlines_la.csv")
 
+### FROM HERE, JUST EXAMPLES
 
 hex.toplot <- merge(hex.gg, hex.rates, by.x="id", by.y="hex.id")
-  # Must be in correct order to plot correctly
+## Must be in correct order to plot correctly
 hex.toplot <- hex.toplot[order(hex.toplot$Year, hex.toplot$id, hex.toplot$order),]
 library(scales)
 
@@ -205,9 +206,9 @@ hx.to.plot <- hx.to.plot[order(hx.to.plot$hex.id, hx.to.plot$order),]
 
 ggplot(data=hx.to.plot, aes(x=long, y=lat, group=group)) +
     geom_polygon(aes(fill=value.change), alpha=1) +
-        scale_fill_gradientn("UMBR",
-                             colours=c("#EEEEEE",
-                                 "#CCCCCC",
-                                 "#AAAAAA", "#333333", "black") ) +
-coord_equal() +
+    scale_fill_gradientn("UMBR",
+                         colours=c("#EEEEEE",
+                                   "#CCCCCC",
+                                   "#AAAAAA", "#333333", "black") ) +
+    coord_equal() +
     theme_bw()
