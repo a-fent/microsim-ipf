@@ -61,7 +61,7 @@ the_map_theme_legend_right <- the_map_theme +
 
 colpal.paired <- c(red.3, red.2, grey.3)
 colpal.ascending <- c(grey.1, grey.2, red.1, red.2, red.3)
-colpal.qual <- c(red.2, blue, grey.2)
+colpal.qual <- c(red.2, blue, grey.1)
 colpal.diverging <- c(grey.2, grey.1, red.1, red.2, red.3)
 colpal.diverging.darker <- c(grey.2, red.1, red.2, red.3)
 
