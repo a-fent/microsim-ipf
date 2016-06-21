@@ -1,37 +1,42 @@
-#+TITLE: Poverty and gentrification in London: a progress report, 2001–2011
+#+TITLE: Gentrification in London: a progress report, 2001–2013
 #+AUTHOR: Alex Fenton
 #+PROPERTY: header-args:R :session *R-LondonGrowthPoverty* :cache yes :exports results
 #+OPTIONS: toc:nil
-#+LATEX_CLASS: generic-paper
+#+LATEX_CLASS: koma-paper
+#+LATEX_HEADER: \IfFileExists{case-paper.sty}{\usepackage{case-paper}}{\usepackage{biblatex}}
 #+LATEX_HEADER: \addbibresource{everything.bib}
 
-# #+LATEX_HEADER: \IfFileExists{case-paper.sty}{\usepackage{case-paper}}{}
-#+BEGIN_abstract
-This paper investigates changes in the composition and spatial distribution of income poverty in London from 2001 to 2013, and considers it as evidence for the progress of gentrification in the city. It thus draws on two literatures, one on poverty and social policy and one on gentrification and class, and argues that income poverty addresses some shortcomings of conventional occupational class statistics in gentrification research. The empirical analysis then presented uses administrative data  and new spatial microsimulation estimates of income and poverty. These show that in the poorest, eastern parts of inner London, poverty rates fell. Here there was intense development and valorisation of land and housing around the financial districts, rapid population growth and in-migration, and absolute falls in the numbers of the out-of-work poor. Poverty rates rose in the relatively disadvantaged parts of outer London. This is accounted for partly by rises in out-of-work poverty, but predominantly by the impoverishment of low-income workers through their wages becoming insufficient relative to housing costs. The paper thus confirms broad changes in the spatial distribution of poverty identified in recent studies, while pointing to the exploitation of labour and land as central mechanisms in explaining patterns of gentrification and proletarianisation in the city.
-#+END_abstract
+#+TOC: headlines 2
 
-#+LATEX: \clearpage
+#+BEGIN_LaTeX
+\ifdef{\CASEcontact}{\CASEcontact{XXX}{June 2016}}{}
+\clearpage
+\listoftables
+\listoffigures
+\clearpage
+\ifdef{\CASEboiler}{\CASEboiler{Alex Fenton}}{}
+#+END_LaTeX
 
-JEL = R230
-
-
-* Acknowledgements
+* Editorial note and acknowledgments
   :PROPERTIES:
   :UNNUMBERED: t
   :END:
-  This paper was written between 2013 to 2015 whilst the author was Visiting Fellow at CASE. Some of the analyses presented build on research conducted in 2011 and 2012 as part of the Social Policy in a Cold Climate programme, funded by the Nuffield Foundation, the Joseph Rowntree Foundation and the Trust for London. The UMBR small-area poverty proxy dataset used here was also developed within this research programme.
+  This paper was written from 2013 to 2015 whilst the author was a Visiting Fellow at CASE, and has benefited from ongoing exchanges with colleagues at the centre. Some of the analyses and sources here, including the UMBR dataset, build on research conducted in 2011 and 2012 as part of the /Social Policy in a Cold Climate/ programme at CASE, funded by the Nuffield Foundation, the Joseph Rowntree Foundation and the Trust for London. Hannah Aldridge (New Policy Institute) and Antoine Paccoud (LSE) read an earlier draft of the paper and provided valuable comments. Abigail McKnight made numerous editorial improvements. Remaining errors are the author's responsibility.
 
-  The paper has benefited from ongoing exchanges with colleagues at CASE over the years. Hannah Aldridge (New Policy Institute) and Antoine Paccoud (LSE) read an earlier draft of the paper and provided many valuable comments and criticisms. Abigail McKnight made numerous sharp-eyed editorial improvements. Any errors remain, of course, solely the author's responsibility.
+  The paper used microdata from the /Family Resources Survey/ and /Households Below Average Income/, to which access was provided by the UK Data Archive at the University of Essex. It also used 2001 and 2011 Census tables, provided by NOMIS, and administrative data from DWP (benefit claim statistics), HMRC (personal tax data) and VOA (Council Tax data). Crown Copyright on these materials is acknowledged as applicable.  The income simulation and analysis of the results was carried out in R statistics with extensive use of several packages, notably "survey" [[cite:lumley_survey:_2014][;]], "ggplot2" [[cite:wickham_ggplot2:_2015][;]] and "Hmisc"  [[cite:harrell_jr._hmisc:_2015][;]]. The source code for the analyses presented in this paper as well as R code, data and output weights for the spatial microsimulation are available online at https://github.com/a-fent/microsim-ipf.
 
-  The spatial microsimulation from which results are presented here uses survey microdata from the /Family Resources Survey/ and /Households Below Average Income/. Access to these surveys was provided by the UK Data Archive at the University of Essex. It also made use of 2001 and 2011 Census tables, provided by NOMIS. Additional administrative data used in the paper are provided by DWP (benefit claim statistics), HMRC (personal tax data) and VOA (Council Tax data). Crown Copyright on these materials is acknowledged as applicable. 
+* Abstract
+  :PROPERTIES:
+  :UNNUMBERED: t
+  :END:
+  This paper investigates changes in the composition and spatial distribution of income poverty in London from 2001 to 2013, and considers them as evidence of gentrification. It is first argued that income poverty measures address some of the shortcomings of conventional occupational class statistics in gentrification research. The empirical analysis, using poverty proxies and spatial microsimulation income estimates, show that in the poorest, eastern parts of inner London, poverty rates fell. Here there was intense development and valorisation of land and housing around the financial districts, rapid population growth, and absolute falls in the numbers of the out-of-work poor. Poverty rates rose in the relatively disadvantaged parts of outer London. This is accounted for partly by rises in out-of-work poverty, but predominantly by the impoverishment of low-income workers through their wages becoming insufficient relative to housing costs. The paper thus confirms broad changes in the spatial distribution of poverty identified in recent studies, while pointing to the exploitation of labour and land as central mechanisms in explaining patterns of gentrification and proletarianisation in the city.
 
-The income simulation and analysis of the results was carried out in R statistics and made extensive use of several packages, notably "survey"[[cite:lumley_survey:_2014][;]], "ggplot2"[[cite:wickham_ggplot2:_2015][;]] and "Hmisc"[[cite:jr_hmisc:_2015][;]]. The source code for all analyses and figures presented in this paper, as well as R code, data and output weights for the spatial microsimulation, are available online at https://github.com/a-fent/microsim-ipf.
+#+BEGIN_LaTeX
+\ifdef{\CASEkwords}{\CASEkwords{London, gentrification, poverty}}{}
+\ifdef{\CASEjelnum}{\CASEjelnum{R230}}{}
+\ifdef{\CASEcorresp}{\CASEcorresp{alex.fenton@pressure.to}}{}
+#+END_LaTeX
 
-#+LATEX: \clearpage
-#+TOC: headlines 2
-#+LATEX: \listoftables
-#+LATEX: \listoffigures
-#+LATEX: \clearpage
 * Introduction
   After decades of population decline after World War 2, London has undergone a remarkable reversal of fortunes since around the mid-1980s. In the first decade of the 2000s this was apparent in official statistics, which showed how London increasingly drew apart from the rest of the UK in measures of aggregate economic performance. It was equally visible in the physical form of the city, which became denser and taller and — according to taste — either adorned or blotted by new "landmark" buildings providing offices, leisure and residence to an international economic elite. Economic growth and physical development were, however, spatially uneven processes. They were uneven in the sense that London, taken as a whole, diverged further from its hinterland, the rest of the UK, but also in that this growth and development was most pronounced in certain parts of the inner urban area.
 
@@ -523,7 +528,7 @@ There are, however, some differences between the two sources in both the scale o
    One of the most marked changes in the structure of poverty in Britain over the 2000s was the sharply increased proportion of the poor who are poor despite there being an adult in work in the household[fn:6]. This development was especially pronounced in London: "[a] decade ago, the majority of children and adults in poverty in London were in workless families (55%); now the majority live in a family where someone is in work (60%)" [[cite:aldridge_londons_2015][p.25;]]. The spatial microsimulation estimates allow us to look at how this has affected different boroughs within the city. Figure \ref{fig:economic-status-borough} gives a decomposition of the effects of this shift by borough. It shows the net change in the number of the poor in each borough, according to whether the benfit unit in which they live has any person in employment. State income support to low-income pensioners increased substantially over the period, and therefore benefit units where no-one is working but where the head of the unit or their spouse is aged over 60 are separated out and shown in a separate column.
 
 #+NAME: fig:economic-status-borough
-#+BEGIN_SRC R :exports results :results output graphics :file fig/econstat_borough.pdf :width 4.5 :height 7.5
+#+BEGIN_SRC R :exports results :results output graphics :file fig/econstat_borough.pdf :width 4.5 :height 6.5
   ecstat.01 <- area.sim.table(pov.sim.01, ~ECOBU)
   ecstat.11 <- area.sim.table(pov.sim.11, ~ECOBU)
 
@@ -549,7 +554,7 @@ There are, however, some differences between the two sources in both the scale o
       geom_bar(stat="identity", position="dodge") +
       scale_x_discrete("") +
       scale_fill_manual("", values=colpal.qual,
-                        labels=c("\"Working\ (head and/or spouse working)"\n",
+                        labels=c("\"Working\"\n (head and/or spouse working)",
                                  "\"Workless\",\n head and spouse aged <60",
                                  "\"Workless\",\n head or spouse aged 60+")) +
       scale_y_continuous("People (thousands)") +
@@ -571,7 +576,7 @@ As before, these are comparisons of cross-sections at two time points, which do 
    Gentrification in London in the 2000s was marked not, as in classic accounts, by the replacement of renting by owner-occupation, but by the rapid expansion of private renting. At the same time, social rented housing declined in share and importance as a means of providing housing to low-income households, whilst state subsidies to private rents through Local Housing Allowance (Housing Benefit) increased. Alongside this, the gap between poverty rates before and after housing costs grew ever wider, and the housing circumstances of the income-poor in different parts of the city are thus of particular interest.
 
 #+NAME: fig:poverty-tenure-change
-#+BEGIN_SRC R :exports results :results output graphics :file fig/pov_tenure_change.pdf :width 4.5 :height 7.5
+#+BEGIN_SRC R :exports results :results output graphics :file fig/pov_tenure_change.pdf :width 4.5 :height 6.5
   ten.cmp <- merge(area.sim.table(pov.sim.01, ~tenure.3),
                    area.sim.table(pov.sim.11, ~tenure.3),
                    by=0, suffixes=c(".01", ".11"))
