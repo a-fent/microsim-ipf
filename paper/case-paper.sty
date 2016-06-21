@@ -1,0 +1,132 @@
+\usepackage[backend=biber,
+autocite=inline,
+style=authoryear,
+citestyle=authoryear-icomp,
+doi=false,isbn=false,url=false]{biblatex}
+
+
+%% PACKAGES
+%% USE PROPER SUPERSCRIPT GLYPHS
+\usepackage{realscripts}
+% \usepackage{ragged2e}
+% \AtBeginDocument{\RaggedRight}
+% \setlength{\RaggedRightParindent}{1.2pc}
+
+%% LAYOUT
+\usepackage{geometry}
+\geometry{%
+   a4paper,
+   portrait,
+   %ignoreall,    % sets both ignoreheadfoot and ignoremp to true
+   heightrounded, % This option rounds \textheight to n-times (n: an integer) of \baselineskip
+%%% Margin
+   left=25.4mm,
+   right=25.4mm,
+   top=25.4mm,
+   bottom=25.4mm
+}
+
+
+
+%% FONT STUFF
+\setmainfont[Numbers=OldStyle]{Times New Roman}
+\KOMAoption{fontsize}{13pt}
+
+%% HEADINGS
+\setkomafont{title}{\fontsize{18pt}{16pt}\bfseries}
+\setkomafont{author}{\fontsize{16pt}{16pt}\bfseries}
+\setkomafont{disposition}{\bfseries}
+\setkomafont{section}{\bfseries\fontsize{14pt}{14pt}}
+\RedeclareSectionCommand[beforeskip=.5\baselineskip,afterskip=.25\baselineskip]{section}
+\setkomafont{subsection}{\bfseries\itshape\fontsize{13pt}{13pt}}
+\RedeclareSectionCommand[beforeskip=.5\baselineskip,afterskip=.25\baselineskip]{subsection}
+\setkomafont{caption}{\bfseries\fontsize{13pt}{13pt}}
+
+%% MISC LABELS
+\setkomafont{captionlabel}{\bfseries\fontsize{13pt}{13pt}}
+\setkomafont{descriptionlabel}{\normalfont\bfseries}
+
+%% TITLE 
+\makeatletter
+\renewcommand\maketitle{
+   \begin{center}
+     {\fontsize{18pt}{18pt}\bfseries\@title\par\vspace{1em}}
+     {\fontsize{16pt}{16pt}\bfseries\@author\vspace{3em}}
+   \end{center}
+}
+\makeatother
+
+%% FOOTNOTES
+\deffootnote[1em]{1em}{1em}{%
+  \textsuperscript{\makebox[1em][l]{\thefootnotemark}}}
+
+% TABLES
+\newfontfamily\timeslf[Numbers=Lining]{Times New Roman}
+\AtBeginEnvironment{tabular}{\timeslf\fontsize{12pt}{18pt}\selectfont}
+
+\usepackage{tabularx}
+% Contact details for footer on cover page
+% Argument 1 is the number of the CASE paper
+% Argument 2 is the month date of publication
+\newcommand\CASEcontact[2]{
+\begin{table}[b]
+\begin{tabularx}{\textwidth}{ l X r }
+\em{CASE/#1} & & Centre for Analysis of Social Exclusion \\
+\em{#2} & & London School of Economics \\
+ & & Houghton Street \\
+ & & London WC2A 2AE \\
+ & & CASE enquiries – tel: 020 7955 6679 \\
+\end{tabularx}
+\end{table}
+\clearpage
+}
+
+
+% CASE boiler plate for second page
+\newcommand\CASEboiler[1] {
+  \section*{\centerline{Centre for Analysis of Social Exclusion}}
+  
+
+The Centre for Analysis of Social Exclusion (CASE) is a
+multi-disciplinary research centre based at the London School of
+Economics and Political Science (LSE), within the Suntory and Toyota
+International Centres for Economics and Related Disciplines (STICERD).
+Our focus is on exploration of different dimensions of social
+disadvantage, particularly from longitudinal and neighbourhood
+perspectives, and examination of the impact of public policy.
+
+In addition to our discussion paper series (CASEpapers), we produce
+occasional summaries of our research in CASEbriefs, and reports from
+various conferences and activities in CASEreports. All these
+publications are available to download free from our website. Limited
+printed copies are available on request.
+
+For further information on the work of the Centre, please contact the
+Centre Manager, Jane Dickson, on:
+
+\begin{tabbing}
+Telephone: \= UK+20 7955 6679 \\
+Fax:       \> UK+20 7955 6951 \\
+Email:     \> j.dickson@lse.ac.uk \\
+Web site: \> \href{http://sticerd.lse.ac.uk/case}{http://sticerd.lse.ac.uk/case} \\
+\end{tabbing}
+
+© #1
+
+All rights reserved. Short sections of text, not to exceed two
+paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+\clearpage
+}
+
+\newcommand\CASEkwords[1] {
+  Key words: #1 \par
+}
+
+\newcommand\CASEjelnum[1] {
+  JEL classification: #1 \par
+}
+
+\newcommand\CASEcorresp[1] {
+  Corresponding author: \href{mailto:#1}{#1} \par
+}
