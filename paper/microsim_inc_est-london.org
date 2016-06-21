@@ -7,17 +7,19 @@
 #+LATEX_HEADER: \addbibresource{everything.bib}
 
 #+BEGIN_abstract
-Spatial microsimulation (SMS) is a range of techniques for estimating the local distribution of a variable – here, household income – by combining social survey microdata with Census or administrative population totals. The methods are attractive for social policy analysis of spatial economic differences. Unlike aggregate measures such as regional GVA and GDHI, they permit distributional analysis of income, and unlike local labour market indicators such as wages and employment rates, they encompass both market outcomes and secondary distribution through taxes and transfers. In comparison to deprivation indices and proxies, they measure income poverty and inequality in standard national terms. This paper presents an example of spatial microsimulation by iterative proportional fitting (IPF), in which the household income distribution in London's 33 boroughs in 2001/02 and 2011/12 is estimated. The coherence and plausibility of the results in comparison to other official statistics is examined in some details. Two refinements to standard IPF methods are presented. Multi-level IPF allows the use of both person- and household-level data; this is found to improve the estimation of poverty rates. Adjusting IPF starting weights by reference to personal tax data increases the dispersion of estimated distributions, but at the cost of increased error of estimates in wealthier areas. The paper confirms the value of SMS for synchronic spatial analysis, and for its hitherto little-explored use in modelling spatial differences in the effects of fiscal and welfare policy changes.
+Spatial microsimulation (SMS) is a range of techniques for estimating the local distribution of a variable – here, household income – by combining social survey microdata with Census or administrative population totals. This paper makes a case for the value of these methods in social policy analysis of spatial economic differences. Unlike aggregate measures such as regional GVA and GDHI, they permit distributional analysis of income, and unlike local labour market indicators such as wages and employment rates, they encompass both market outcomes and secondary distribution through taxes and transfers. In comparison to deprivation indices and proxies, they measure income poverty and inequality in standard national terms. 
+
+This paper presents an example of spatial microsimulation by iterative proportional fitting (IPF), in which the household income distribution in London's 33 boroughs in 2001/02 and 2011/12 is estimated. The coherence and plausibility of the results in comparison to other official statistics is examined in some detail. Two refinements to standard IPF methods are presented. Multi-level IPF allows the use of both person- and household-level data; this is found to improve the estimation of poverty rates. Adjusting IPF starting weights by reference to personal tax data increases the dispersion of estimated distributions, but at the cost of increased error of estimates in wealthier areas. The paper confirms the value of SMS for synchronic spatial analysis, and argues for its hitherto little-explored use in modelling spatial differences in the effects of fiscal and welfare policy changes.
 #+END_abstract
 
 #+BEGIN_LaTeX
 \clearpage
 \section*{Acknowledgements}
-The analysis presented in this paper were developed from 2013 to 2015, whilst the author was a Visiting Fellow at CASE. The paper has benefited from exchanges with colleagues at the Centre over the years. Ben Anderson at Southampton University read an earlier draft of the paper, and offered many useful comments and suggestions. Any remaining errors are, of course, solely the author's responsibility.
+The analysis presented in this paper were developed from 2013 to 2015, whilst the author was a Visiting Fellow at CASE. The paper has benefited from exchanges with colleagues at the Centre over the years. Ben Anderson at Southampton University reviewed an earlier draft of the paper and offered many useful comments and suggestions. Abigail McKnight provided valuable editorial input. Any remaining errors are, of course, solely the author's responsibility.
 
 The paper uses survey microdata from the Family Resources Survey and Households Below Average Income; access to these was provided by the UK Data Archive at the University of Essex. It also makes use of 2001 and 2011 Census tables, provided by NOMIS. Additional administrative data used in the paper are provided by DWP (benefit claim statistics), HMRC (personal tax data), VOA (Council Tax data) and ONS (Regional Accounts). Crown Copyright on these materials is acknowledged as applicable.
 
-The simulation and analysis of results was carried out in R statistics and made extensive use of several packages, including "survey" \autocite{lumley_survey_2014}, "ggplot2" \autocite{wickham_ggplot2_2015} and "Hmisc" \autocite{jr_hmisc_2015}. An online repository containing the IPF code, the resulting simulation weights, and the source for the analyses and figures presented in this paper is available online at https://github.com/a-fent/microsim-ipf.
+The simulation and analysis of results was carried out in R statistics and made extensive use of several packages, including "survey" \autocite{lumley_survey:_2014}, "ggplot2" \autocite{wickham_ggplot2:_2015} and "Hmisc" \autocite{jr_hmisc:_2015}. An online repository containing the IPF code, the resulting simulation weights, and the source for the analyses and figures presented in this paper is available online at https://github.com/a-fent/microsim-ipf.
 \clearpage
 #+END_LaTeX
 
@@ -33,9 +35,9 @@ The simulation and analysis of results was carried out in R statistics and made 
 + GDHI :: Gross Disposable Household Income: national accounting measure of household income 
 + FRS :: Family Resources Survey: UK government survey of household income
 + HBAI :: Households Below Average Incomes: UK survey of the income distribution, derived from FRS
-+ HHO :: here, simulation using household data only (see page ref:h:hho)
++ HHO :: here, simulation using household data only (see section ref:h:hho)
 + HMT :: HM Treasury
-+ MLV :: here, multi-level simulation using household and individual data (see page ref:h:mlv)
++ MLV :: here, multi-level simulation using household and individual data (see section ref:h:mlv)
 + IFS :: Institute for Fiscal Studies
 + IPF :: Iterative Proportional Fitting
 + LFS :: Labour Force Survey
@@ -43,7 +45,7 @@ The simulation and analysis of results was carried out in R statistics and made 
 + NS-SEC :: National Statistics Socio-Economic Classification
 + RMSE :: Root Mean Squared Error
 + SMS :: Spatial Microsimulation
-+ SPI :: Survey of Personal Incomes: UK statistical source on individual incomes from tax records; here, simulation using this source  (see page ref:h:spi)
++ SPI :: Survey of Personal Incomes: UK statistical source on individual incomes from tax records; here, simulation using this source  (see section ref:h:spi)
 + UMBR :: Unadjusted Means-Tested Benefits Rate: poverty proxy measure using means-tested social security benefits
 
 JEL = C81
