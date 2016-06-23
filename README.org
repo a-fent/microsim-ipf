@@ -19,16 +19,20 @@ Users who wish to use the provided weights to do their own analysis of income di
 ** R
 Contains the single file =ipf_functions.r=, which provides a set of R functions for carrying out and using iterative proportional fitting (IPF) techniques in a spatial microsimulation. 
 
-Firstly, it provides a set of functions for creating new weights for lists of areas from survey case data and local population totals. Variants include carrying out the reweighting in parallel across multiple cores, and for doing "multi-level" reweighting, where constraints and survey cases at two different levels of observation (e.g. people and households) are combined to create new weights.
++ Firstly, it provides a set of functions for creating new weights for lists of areas from survey case data and local population totals. Variants include carrying out the reweighting in parallel across multiple cores, and for doing "multi-level" reweighting, where constraints and survey cases at two different levels of observation (e.g. people and households) are combined to create new weights.
 
-Secondly, it provides a fairly simple set of convenience functions for using the simulation weights produced to estimate a variety of statistics across a set of areas. These are heavily based on the =survey= package.
++ Secondly, it provides a fairly simple set of convenience functions for using the simulation weights produced to estimate a variety of statistics across a set of areas. These are heavily based on the =survey= package.
 ** IPF
 The R and data files here present the use IPF weighting to carry out a spatial microsimulation of household income in London in 2001 and 2011, using the /Family Resources Survey/ and Census and administrative data.
+
++ The =make_ipf_weights_london_la= files are the main files for carrying out the fitting and generating survey weights for HBAI for the respective years. Different techniques are demonstrated including multi-level fitting, as described in the paper.
++ The =constraints_= and the =frs_load_recode= files contain the mappings from FRS survey case variables to the Census and administrative data to which they are to be fitted.
++ The =constraints/= directory holds the Census and administrative data for London boroughs used in the fitting.
++ The =weights/= directory holds the generated weights, which may be used to carry out estimation of HBAI variables for London boroughs.
 ** Paper
+   Two papers, [[file:paper/microsim_inc_est-london.org][one technical]] and [[file:paper/london_poverty_space_2000s.org][one substantive]] discuss and exemplify the use of microsimulation to analyse the changing spatial distribution and composition of poverty in London boroughs from 2001 to 2011. 
+
+   Both papers are written as [[http://orgmode.org][org-mode]] files for Emacs. They are plain text and should be readable in any editor. They contain the executable R code to produce the various tables and graphics which the published papers contain.
 * Licence
-
-
-
-
 
 
