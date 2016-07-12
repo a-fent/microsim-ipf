@@ -62,7 +62,6 @@ Spatial microsimulation (SMS) is a range of techniques for estimating the local 
 + UMBR :: Unadjusted Means-Tested Benefits Rate: poverty proxy measure using means-tested social security benefits
 
 
-
 * Introduction
    One feature of Britain's economic and social landscape is the existence of deep, persistent, and even growing spatial disparities in income and wealth between regions, cities and neighbourhoods [[cite:dorling_poverty_2007,gardiner_spatially_2013][;]]. These disparities have been a recurring, if not constant, presence both in government policy and in research for much of the last century [[cite:ohara_journey_2005][;]]. Two broad disciplinary and practical traditions might crudely be distinguished within the field: /regional economics/, and the /geography of deprivation/. These traditions have their distinct vocabularies, methods and data sources, and have not always been in communication with one another.
 
@@ -89,7 +88,7 @@ The core of the microsimulation approach is thus the /linking variables/ which a
 ** Other small-area income estimation methods
 It is worth noting in passing that microsimulation is not the only method by which local income estimates can be derived through synthesis of local area and survey data. In recent years several reviews have compared microsimulation to other small-area estimation methods from both more theoretical and more practical standpoints [[cite:new_zealand_more_2010,whitworth_evaluations_2013,betti_poverty_2013][;Useful reviews include]]. This literature typically distinguishes a family of methods under the heading /spatial microsimulation/ from a set of approaches labelled /modelled/ or /statistical/.
 
-These have in common some statistical method for combining the best available survey measure of income – in the UK, normally the /Family Resources Survey/ or /Understanding Society/ – with local area characteristics which predict inter-area variation in that income. Modelled or statistical approaches are so called because  a regression model is first fitted to the sample survey which estimates how some statistic of income, such as its mean, is related to local characteristics. Once a model has been fitted, the parameters are used to give predicted values for all areas from the local data. UK examples include Bramley's work on housing affordability [[cite:wilcox_evaluating_2010,bramley_modelling_1998][;]] and the Office of National Statistics' poverty estimates for  small areas [[cite:methodology_directorate_model-based_2010][;]], along with ONS's comparable earlier estimates of mean income. Parametric approaches – that is, those based on a formal specification of the statistical income distribution and estimation of its parameters - are also widely used in development economics [[cite:elbers_microlevel_2003][;A key paper here is]].
+These have in common some statistical method for combining the best available survey measure of income – in the UK, normally the /Family Resources Survey/ or /Understanding Society/ – with local area characteristics which predict inter-area variation in that income. Modelled or statistical approaches are so called because  a regression model is first fitted to the sample survey which estimates how some statistic of income, such as its mean, is related to local characteristics. Once a model has been fitted, the parameters are used to give predicted values for all areas from the local data. UK examples include Bramley's work on housing affordability [[cite:wilcox_evaluating_2010,bramley_modelling_1998][;]] and the Office of National Statistics' poverty estimates for  small areas [[cite:methodology_directorate_model-based_2010][;]], along with ONS's comparable earlier estimates of mean income. Parametric approaches – that is, those based on a formal specification of the statistical income distribution and estimation of its parameters - are also widely used in development economics [[cite:elbers_microlevel_2003][;a key paper here is]].
 
 Aside from /modelled/ and /simulated/ approaches, one might also note the in applied statistics of /heuristic/ approaches, in which two or more data sources are synthesised or calibrated to produce local estimates, but with a technique not formally based on statistical theory. Such approaches apply judgement to the synthesis of multiple sources, translating, for example, observed variance in one dataset to predicted variance in another. The Greater London Assembly's suite of small-area income estimates  nicely exemplify this approach [[cite:gla_intelligence_gla_2014][;]].
 
@@ -321,6 +320,36 @@ In the tests, the weights derived from the chosen number of IPF iterations (here
         label="table:rmse-2001-fit")
 #+END_SRC
 
+#+RESULTS[49ec43b4acbd1473404a5043de8dd70e429ac484]: table:rmse-2001-fit-src
+#+BEGIN_LaTeX
+ %latex.default(fit.01, file = "", numeric.dollar = FALSE, big.mark = ",",     cdec = rep(0, 5), n.rgroup = c(4, 5), rgroup = c("Adult",         "Household"), n.cgroup = c(2, 1, 1, 1), cgroup = c("Constraint",         "Hhold Only", "Multi-Level", "SPI"), caption = "Root mean squared error of the constraint variables in the three simulations, 2001",     label = "table:rmse-2001-fit")%
+\begin{table}[!tbp]
+\caption{Root mean squared error of the constraint variables in the three simulations, 2001\label{table:rmse-2001-fit}} 
+\begin{center}
+\begin{tabular}{lrrcrcrcr}
+\hline\hline
+\multicolumn{1}{l}{\bfseries fit.01}&\multicolumn{2}{c}{\bfseries Constraint}&\multicolumn{1}{c}{\bfseries }&\multicolumn{1}{c}{\bfseries Hhold Only}&\multicolumn{1}{c}{\bfseries }&\multicolumn{1}{c}{\bfseries Multi-Level}&\multicolumn{1}{c}{\bfseries }&\multicolumn{1}{c}{\bfseries SPI}\tabularnewline
+\cline{2-3} \cline{5-5} \cline{7-7} \cline{9-9}
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Areas}&\multicolumn{1}{c}{Classes}&\multicolumn{1}{c}{}&\multicolumn{1}{c}{RMSE}&\multicolumn{1}{c}{}&\multicolumn{1}{c}{RMSE}&\multicolumn{1}{c}{}&\multicolumn{1}{c}{RMSE}\tabularnewline
+\hline
+{\bfseries Adult}&&&&&&&&\tabularnewline
+~~ETHNICITY&33& 5&&11,320&&1,879&&1,894\tabularnewline
+~~NSSEC.ACTIVE&33& 9&& 5,049&&  738&&  734\tabularnewline
+~~AGE.SEX&33&16&& 1,959&&  308&&  311\tabularnewline
+~~EMPSTAT.LIVARR&33&11&& 3,852&&  554&&  566\tabularnewline
+\hline
+{\bfseries Household}&&&&&&&&\tabularnewline
+~~ACCOM.TYPE&33& 4&&     2&&   38&&   39\tabularnewline
+~~TENURE&33& 4&&     2&&  135&&  149\tabularnewline
+~~CTAX.BAND&33& 8&&   704&&  705&&  705\tabularnewline
+~~EMPLOY.STAT.74.HRP&33& 5&&    11&&   29&&   32\tabularnewline
+~~HHOLD.TYPE&33& 9&&     0&&    0&&    0\tabularnewline
+\hline
+\end{tabular}\end{center}
+
+\end{table}
+#+END_LaTeX
+
 #+NAME: table:rmse-2011-fit
 #+BEGIN_SRC R :exports results :results output latex
   fit.11 <- cbind(rbind(assess.fit.rmse(ad.cons.11, sim.frsad.11.sl),
@@ -346,6 +375,36 @@ In the tests, the weights derived from the chosen number of IPF iterations (here
         caption="Root mean squared error of the constraint variables in the three simulations, 2011",
         label="table:rmse-2011-fit")
 #+END_SRC
+
+#+RESULTS[96b1645e751c7370d8278f622a789a6f57cd56dd]: table:rmse-2011-fit
+#+BEGIN_LaTeX
+ %latex.default(fit.11, file = "", numeric.dollar = FALSE, big.mark = ",",     cdec = rep(0, 5), n.rgroup = c(4, 5), rgroup = c("Adult",         "Household"), n.cgroup = c(2, 1, 1, 1), cgroup = c("Constraint",         "Hhold Only", "Multi-Level", "SPI"), caption = "Root mean squared error of the constraint variables in the three simulations, 2011",     label = "table:rmse-2011-fit")%
+\begin{table}[!tbp]
+\caption{Root mean squared error of the constraint variables in the three simulations, 2011\label{table:rmse-2011-fit}} 
+\begin{center}
+\begin{tabular}{lrrcrcrcr}
+\hline\hline
+\multicolumn{1}{l}{\bfseries fit.11}&\multicolumn{2}{c}{\bfseries Constraint}&\multicolumn{1}{c}{\bfseries }&\multicolumn{1}{c}{\bfseries Hhold Only}&\multicolumn{1}{c}{\bfseries }&\multicolumn{1}{c}{\bfseries Multi-Level}&\multicolumn{1}{c}{\bfseries }&\multicolumn{1}{c}{\bfseries SPI}\tabularnewline
+\cline{2-3} \cline{5-5} \cline{7-7} \cline{9-9}
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Areas}&\multicolumn{1}{c}{Classes}&\multicolumn{1}{c}{}&\multicolumn{1}{c}{RMSE}&\multicolumn{1}{c}{}&\multicolumn{1}{c}{RMSE}&\multicolumn{1}{c}{}&\multicolumn{1}{c}{RMSE}\tabularnewline
+\hline
+{\bfseries Adult}&&&&&&&&\tabularnewline
+~~ETHNICITY&33& 5&&14,686&&2,156&&2,150\tabularnewline
+~~NSSEC.ACTIVE&33&10&& 5,761&&1,338&&1,335\tabularnewline
+~~AGE.SEX&33&16&& 2,462&&  522&&  519\tabularnewline
+~~EMPSTAT.LIVARR&33&10&& 3,671&&  551&&  545\tabularnewline
+\hline
+{\bfseries Household}&&&&&&&&\tabularnewline
+~~ACCOM.TYPE&33& 4&&     0&&   15&&   16\tabularnewline
+~~TENURE&33& 4&&     0&&   95&&   94\tabularnewline
+~~CTAX.BAND&33& 8&&   627&&  627&&  627\tabularnewline
+~~EMPLOY.STAT.HRP&33& 5&&     5&&   10&&   10\tabularnewline
+~~HHOLD.TYPE&33& 7&&     0&&    0&&    0\tabularnewline
+\hline
+\end{tabular}\end{center}
+
+\end{table}
+#+END_LaTeX
 
 Lower values are "better", and the final constraint applied – here, household type – necessarily has nil error. Beyond this, there are no clear prescriptions as to what values of RMSE and similar measures should be taken as acceptable [[cite:anderson_creating_2007][p.14;]]. Here, a sense of the degree of error can be got by considering that London boroughs had in 2011 on average 100,000 households, and that the errors of the multi-level simulation are all less than 1,000 on the household variables.
 
@@ -404,7 +463,7 @@ Although HBAI does not provide borough-level income statistics, it does yield Lo
 
 #+LABEL: fig:orig_v_sim-deciles-2011
 #+CAPTION[The whole London income distribution, decile estimates from simulations compared to HBAI]: Estimates of decile values of 2011 household income in London (gross, and equivalised, before and after housing costs). Estimates from the published HBAI weights are shown as boxes with the 95% confidence interval. Points show the all-London estimates using the simulation weights. All estimates based on counts of benefit units.
-#+RESULTS[ba27ce3d7625857b39b9cd5387349afdf1d64f14]: fig:orig_v_sim-deciles-2011
+#+RESULTS[aec3340ad7307d5ef6a81b4880b0c629d480467f]: fig:orig_v_sim-deciles-2011
 [[file:fig/orig_v_sim-deciles-2011.pdf]]
 
 For all three simulations, for all three income measures, and at all deciles, the SMS estimates are coherent with the published HBAI estimates, lying within the 95% confidence interval of the HBAI estimates.  The simulations of most interest, /MLV/ and /SPI/ lie especially close to the central official estimate. It is also useful to note that different measures of income (gross and equivalised, before and after housing costs) are coherently estimated from a single simulation. It may thus not be necessary in practice to conduct separate simulations to estimate specific income measures, and rather to "produce transferable models that represent multiple characteristics" [[cite:birkin_spatial_2011][p.197;]].
@@ -426,19 +485,6 @@ Figure \ref{fig:sims-vs-gdhi} presents household income in London's 21 current N
 
   gdhi.ln <- subset(gdhi, Area %in% borough.defs$NUTS315CD)
 
-  ## hbai.01 <- transform(hbai.01, num.ppl = G_NEWPP / G_NEWBU)
-  ## sim.hbai.01.sp <- area.simulations(newts.01.sp, hbai.01, "SERNUM")
-
-  ## # HNTINCBU
-  ## foo <- area.sim.totals(sim.hbai.01.sp, ~HNTINCBU+num.ppl)
-  ## foo <- merge(foo, borough.defs, by.x=0, by.y="LA.NAME")
-  ## foo.nuts3 <- aggregate(cbind(HNTINCBU,num.ppl)~NUTS315CD, foo, sum)
-  ## foo.nuts3 <- transform(foo.nuts3, inc.per.cap = HNTINCBU / num.ppl * 52)
-  ## final <- merge(foo.nuts3, gdhi.ln, by.x="NUTS315CD", by.y="Area")
-
-  ## ggplot(final, aes(x=`2001`, y=inc.per.cap) ) +
-  ##     geom_point(aes(label=NUTS3)) + coord_equal()
-
   hbai.11 <- transform(hbai.11, num.ppl = G_NEWPP / G_NEWBU)
   sim.hbai.11.sp <- area.simulations(newts.11.sp, hbai.11, "SERNUM")
   disp.inc <- area.sim.totals(sim.hbai.11.sp, ~HNTINCBU+num.ppl)
@@ -448,15 +494,16 @@ Figure \ref{fig:sims-vs-gdhi} presents household income in London's 21 current N
 
   final <- merge(disp.inc.n3, gdhi.ln, by.x="NUTS315CD", by.y="Area")
 
-  ggplot(final, aes(y=`2011`, x=inc.per.cap) ) +
+  ggplot(final, aes(x=`2011`, y=inc.per.cap) ) +
       geom_point(aes(label=NUTS3), colour=red.2) +
-      labs(x="SPI Simulation net household income per capita, 2011",
-           y="Regional Accounts GDHI per capita, 2011")
+      labs(y="SPI Simulation net household income per capita, 2011",
+           x="Regional Accounts GDHI per capita, 2011") +
+      coord_equal()
 #+END_SRC
 
 #+LABEL: fig:sims-vs-gdhi
 #+CAPTION[Simulation household income per capita against published NUTS3 GDHI, 2011]: Estimates of net household income per capita from the SPI simulation for London's NUTS3 (2015) areas, compared to ONS's published Gross Disposable Household Income per capita figures, from the Regional Accounts.
-#+RESULTS[5d4c74d143d51ecf1a2ddbf1f93e43f69eaf1001]: fig:sims-vs-gdhi
+#+RESULTS[e46f1d995af6e3a130c67d77b50ac6e5fb04433c]: fig:sims-vs-gdhi
 [[file:fig/sims-vs-gdhi.pdf]]
 
 ** Poverty rates and lower incomes
@@ -479,6 +526,24 @@ At the national level, one of the main uses of the HBAI data is the estimation o
         cdec=rep(1,4),
         label="table:london_pov_rates-2011")
 #+END_SRC
+
+#+RESULTS[275b605e88e52e2f6d3e56ef93511446b3241cc3]: table:london_pov_rates-2011
+#+BEGIN_LaTeX
+ %latex.default(tbl, file = "", numeric.dollar = FALSE, ...)%
+\begin{table}[!tbp]
+\caption{Poverty rates (percentage of people in relative low income <60\% of median) 2011, HBAI and simulations\label{table:london_pov_rates-2011}} 
+\begin{center}
+\begin{tabular}{lrrrr}
+\hline\hline
+\multicolumn{1}{l}{Poverty rate (people)}&\multicolumn{1}{c}{HBAI}&\multicolumn{1}{c}{Household Only}&\multicolumn{1}{c}{Multi Level}&\multicolumn{1}{c}{SPI Adjusted}\tabularnewline
+\hline
+Before Housing Costs&15.8&14.6&16.2&16.1\tabularnewline
+After Housing Costs&28.6&27.5&29.3&29.2\tabularnewline
+\hline
+\end{tabular}\end{center}
+
+\end{table}
+#+END_LaTeX
 
 Investigation shows the difference between HBAI and the MLV and SPI simulations to be principally attributable to the differences in weights and implied population totals single people and couples. The Multi-Level and SPI simulations explicitly control for living arrangements (whether an adult is living with a partner) by use of Census data. The grossing control factors used in the HBAI do not control for the marital status or living arrangements of adults, other than the number of lone parent households [[cite:department_for_work_and_pensions_households_2014][p.250, Table A.24;]]. HBAI cannot directly use Census data in its grossing scheme, since it must, as an annual survey, produce weights outside of Census years.
 
@@ -503,6 +568,26 @@ Investigation shows the difference between HBAI and the MLV and SPI simulations 
         numeric.dollar=FALSE,
         label="table-living-arrangements")
 #+END_SRC
+
+#+RESULTS[344cb04c2eb281d334bcffb1510914b647530dd6]:
+#+BEGIN_LaTeX
+ %latex.default(fam.tbl, digits = 2, file = "", title = "Data Source",     n.cgroup = c(2, 3), cgroup = c("Published Statistics", "Simulations"),     caption = "Proportion of adults aged 16+ living in a couple, 2011",     numeric.dollar = FALSE, label = "table-living-arrangements")%
+\begin{table}[!tbp]
+\caption{Proportion of adults aged 16+ living in a couple, 2011\label{table-living-arrangements}} 
+\begin{center}
+\begin{tabular}{lrrcrrr}
+\hline\hline
+\multicolumn{1}{l}{\bfseries Data Source}&\multicolumn{2}{c}{\bfseries Published Statistics}&\multicolumn{1}{c}{\bfseries }&\multicolumn{3}{c}{\bfseries Simulations}\tabularnewline
+\cline{2-3} \cline{5-7}
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Census 2011}&\multicolumn{1}{c}{HBAI}&\multicolumn{1}{c}{}&\multicolumn{1}{c}{Household Only}&\multicolumn{1}{c}{Multi Level}&\multicolumn{1}{c}{SPI Adjusted}\tabularnewline
+\hline
+In a Couple&0.48&0.57&&0.53&0.48&0.48\tabularnewline
+Not in a Couple&0.52&0.43&&0.47&0.52&0.52\tabularnewline
+\hline
+\end{tabular}\end{center}
+
+\end{table}
+#+END_LaTeX
 
 Single adults, especially those living alone, have higher non-response rates, which are not fully compensated for in HBAI's grossing factors. As table \ref{table-living-arrangements} shows, the published HBAI weights give estimates of the proportion of people living in couples which are much higher than the Census. Since single-adult households (whether pensioners or working age) have lower incomes, especially after housing costs, and, increasingly over the 2000s, higher poverty rates than households with two adults, the official HBAI estimates slightly underestimate the real prevalence of low income and poverty. The slightly higher estimates from the simulation may be regarded as equally or more accurate than the published HBAI results.
 
@@ -546,6 +631,41 @@ Also relevant is the dispersion of poverty rates by borough (analysis and interp
         title="Poverty",
         label="table-districts-pov")
 #+END_SRC
+
+#+RESULTS[71cdbd0a56cd3f7ec685f857d3fb0a3e17acbce1]: table-districts-pov
+#+BEGIN_LaTeX
+ %latex.default(pov.brg, file = "", digits = 2, numeric.dollar = FALSE,     n.cgroup = c(2, 2, 2), cgroup = c("Hhold Only", "Multi-Level",         "SPI"), n.rgroup = c(5, 1, 5), rgroup = c("Highest",         "", "Lowest"), caption = "Boroughs with highest and lowest poverty rates (after housing costs) under the three simulations, 2011",     title = "Poverty", label = "table-districts-pov")%
+\begin{table}[!tbp]
+\caption{Boroughs with highest and lowest poverty rates (after housing costs) under the three simulations, 2011\label{table-districts-pov}} 
+\begin{center}
+\begin{tabular}{llrclrclr}
+\hline\hline
+\multicolumn{1}{l}{\bfseries Poverty}&\multicolumn{2}{c}{\bfseries Hhold Only}&\multicolumn{1}{c}{\bfseries }&\multicolumn{2}{c}{\bfseries Multi-Level}&\multicolumn{1}{c}{\bfseries }&\multicolumn{2}{c}{\bfseries SPI}\tabularnewline
+\cline{2-3} \cline{5-6} \cline{8-9}
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{sl.name}&\multicolumn{1}{c}{sl.val}&\multicolumn{1}{c}{}&\multicolumn{1}{c}{ml.name}&\multicolumn{1}{c}{ml.val}&\multicolumn{1}{c}{}&\multicolumn{1}{c}{sp.name}&\multicolumn{1}{c}{sp.val}\tabularnewline
+\hline
+{\bfseries Highest}&&&&&&&&\tabularnewline
+~~1&Newham&0.37&&Newham&0.43&&Newham&0.43\tabularnewline
+~~2&Hackney&0.36&&Tower Hamlets&0.41&&Tower Hamlets&0.41\tabularnewline
+~~3&Tower Hamlets&0.33&&Brent&0.35&&Brent&0.35\tabularnewline
+~~4&Haringey&0.32&&Hackney&0.35&&Hackney&0.35\tabularnewline
+~~5&Lewisham&0.31&&Haringey&0.33&&Haringey&0.33\tabularnewline
+\hline
+{\bfseries }&&&&&&&&\tabularnewline
+~~ &&&&&&&&\tabularnewline
+\hline
+{\bfseries Lowest}&&&&&&&&\tabularnewline
+~~29&Sutton&0.23&&Bromley&0.22&&City of London&0.22\tabularnewline
+~~30&Richmond u.T.&0.21&&Sutton&0.22&&Sutton&0.22\tabularnewline
+~~31&Havering&0.21&&Bexley&0.21&&Bexley&0.21\tabularnewline
+~~32&City of London&0.21&&Richmond u.T.&0.20&&Havering&0.20\tabularnewline
+~~33&Bexley&0.21&&Havering&0.20&&Richmond u.T.&0.20\tabularnewline
+\hline
+\end{tabular}\end{center}
+
+\end{table}
+#+END_LaTeX
+
 *** Deprivation indices and poverty proxies from administrative data
 The introduction noted that deprivation indices have wide acceptance and use in policy-oriented analysis of the subregional and small-area distribution of poverty. The best known are the /Indices of Multiple Deprivation/,  a central component of which are estimates of the incidence of income poverty. These are derived fairly directly from administrative records of rates of receipt of means-tested benefits and tax credits.
 
@@ -555,7 +675,7 @@ In both years, there is the expected positive correlation between the UMBR proxy
 poverty rates over the 2000s [[cite:fenton_should_2013][;]]. Reasons for this include the increasing share of in-work poverty; administrative counts of receipt of out-of-work income-replacement benefits are not sensitive to inter-area differences in the extent low pay and high housing costs as a cause of poverty. A detailed discussion of this trend is found in the accompanying paper. Here, the pertinent findings are that the SMS estimates seem highly plausible in the light of administrative poverty proxies, but that the latter have become increasingly weak at identifying inter-area differences in poverty as conventionally conceived.
 
 #+NAME: fig:sims-vs-umbr
-#+BEGIN_SRC R :exports results :results output graphics :file fig/sims-vs-umbr.pdf :width 4.5 :height 4.5
+#+BEGIN_SRC R :exports results :results output graphics :file fig/sims-vs-umbr.pdf :width 4.5 :height 3.5
   if ( ! exists("umbr.l") ) {
       umbr <- read_csv("~/Documents/DATA/UMBR/umbr14-esw.csv")
       # LSOA to LA, London only
@@ -598,12 +718,13 @@ poverty rates over the 2000s [[cite:fenton_should_2013][;]]. Reasons for this in
       scale_size_area("Households", labels=comma) +
       scale_colour_manual("", values=colpal.paired) +
       labs(x="UMBR", y="Simulated Poverty Rate (AHC)") +
-      facet_wrap(~Year)
+      facet_wrap(~Year) +
+      coord_equal()
 #+END_SRC
 
 #+LABEL: fig:sims-vs-umbr
 #+CAPTION[Simulated borough poverty rates in 2001 and 2011, compared to the UMBR poverty proxy rate]: Comparison of poverty rates (income less than 60% of national median income, after housing costs) from the SP simulations with the Unadjusted Means-Tested Benefits Rate (UMBR) poverty proxy, by borough, 2001 and 2011.
-#+RESULTS[88b2f3fd35ba6d02d6e068a1a71b9f29535a7651]: fig:sims-vs-umbr
+#+RESULTS[fe7aff0ee75664030da83dfe5f5f2a20fb45d710]: fig:sims-vs-umbr
 [[file:fig/sims-vs-umbr.pdf]]
 
 ** Upper incomes and income inequality
@@ -657,7 +778,7 @@ poverty rates over the 2000s [[cite:fenton_should_2013][;]]. Reasons for this in
 
 #+LABEL: fig:ashe_earns
 #+CAPTION[Simulation estimates of full-time weekly earnings, compared to ASHE data]: Point estimates of 2011 median gross weekly earnings from the multi-level (without tax data) and SPI (with tax data) simulations, compared to the 40th to 60th percentiles from published ASHE data, shown as pale grey bars. Data relate to full-time employees only.
-#+RESULTS[6a62402dcc64ecdd855f6c8d6703196e6ac37864]: fig:ashe_earns
+#+RESULTS[ae0edb18003d0bd634c53deba2809521ead8e39f]: fig:ashe_earns
 [[file:fig/earns_v_ashe.pdf]]
 
 In the majority of boroughs, the SMS estimates of the median lie just below the 40th percentile in ASHE. This is also true using the standard FRS weightings, reflecting differences in coverage between surveys.[fn:6] However, there are large absolute disparities between the medians derived from the simulations which do not use the SPI data in boroughs with the highest incomes, most markedly in Kensington and Chelsea and the City of London. The additional use of SPI data moves the simulation median of earned income closer to the ASHE median in such boroughs – but at the same time, moves it further away in some boroughs with lower average earnings.
@@ -700,6 +821,40 @@ Since the addition of SPI data increases the SMS estimates of upper income, we w
               rgroup=c("Highest", "", "Lowest"))
 #+END_SRC
 
+#+RESULTS[e057fe8ff1c496e3187490dc29d9c93625dc2f3d]:
+#+BEGIN_LaTeX
+ %latex.default(tbl, file = "", numeric.dollar = FALSE, ...)%
+\begin{table}[!tbp]
+\caption{Boroughs with highest and lowest Gini coefficients of income inequality (equivalised income after housing costs) under two simulations, 2011\label{table-gini-topbot-2011}} 
+\begin{center}
+\begin{tabular}{llrclr}
+\hline\hline
+\multicolumn{1}{l}{\bfseries Gini coefficient}&\multicolumn{2}{c}{\bfseries Multi-Level}&\multicolumn{1}{c}{\bfseries }&\multicolumn{2}{c}{\bfseries SPI}\tabularnewline
+\cline{2-3} \cline{5-6}
+\multicolumn{1}{l}{}&\multicolumn{1}{c}{Borough}&\multicolumn{1}{c}{Gini}&\multicolumn{1}{c}{}&\multicolumn{1}{c}{Borough}&\multicolumn{1}{c}{Gini}\tabularnewline
+\hline
+{\bfseries Highest}&&&&&\tabularnewline
+~~1&Kensington and Chelsea&0.56&&Kensington and Chelsea&0.61\tabularnewline
+~~2&City of London&0.56&&Westminster&0.60\tabularnewline
+~~3&Westminster&0.55&&City of London&0.59\tabularnewline
+~~4&Hammersmith and Fulham&0.53&&Camden&0.57\tabularnewline
+~~5&Camden&0.53&&Hammersmith and Fulham&0.56\tabularnewline
+\hline
+{\bfseries }&&&&&\tabularnewline
+~~ &&&&&\tabularnewline
+\hline
+{\bfseries Lowest}&&&&&\tabularnewline
+~~29&Newham&0.37&&Newham&0.36\tabularnewline
+~~30&Waltham Forest&0.37&&Waltham Forest&0.35\tabularnewline
+~~31&Havering&0.36&&Havering&0.35\tabularnewline
+~~32&Bexley&0.35&&Bexley&0.34\tabularnewline
+~~33&Barking and Dagenham&0.34&&Barking and Dagenham&0.32\tabularnewline
+\hline
+\end{tabular}\end{center}
+
+\end{table}
+#+END_LaTeX
+
 The results indicate that the adjusted starting weights produce somewhat more plausible results in a relatively small number of areas with very high incomes. However, aside from the additional data requirements and calculations, the technique has shortcomings, particularly the increased error of estimates in those areas, like Kensington, with a local income distribution that is extreme and distant relative to the all-London distribution sampled by FRS. This is because in the most atypical areas, a small number of FRS/HBAI cases are being used in the SMS to represent a large proportion of the resident households. In Kensington, in the SPI simulation, one single survey case represents over 4% of the resident households (by comparison, a typical household case in HBAI represents 0.05% of London households). It follows from this that estimates of inequality and top income from the SPI SMS are somewhat unreliable and identifying inter-year differences with confidence difficult.
 
 This illustrates how SMS cannot compensate for deficiencies in the coverage of source data. It is only filling in missing data, and where it does this starting from only few observations, as at the top of the income scale, it will perform poorly. Unfortunately, it cannot solve the numerous problems of poor statistical observation of income elites, which affects numerous other official statistics, such as ASHE.
@@ -721,25 +876,20 @@ The receipt of Housing Benefit (HB) is chosen here as a strongly income-related 
 
   hsgben$Benefit.Units <- hsgben$Not.HB.Sim + hsgben$HB.Sim
 
-  # The absolute correlation conflates the effect of borough size
-  # with(hsgben, cor(HB.Sim, HB.Actual))
-  # with(hsgben, cor(HB.Sim/Benefit.Units, HB.Actual/Benefit.Units))
-  ## with(hsgben[hsgben$Borough != "City of London",],
-  ##      cor(HB.Sim/Benefit.Units, HB.Actual/Benefit.Units))
-
-  ggplot(hsgben, aes(x=HB.Sim/Benefit.Units*1000,
-                     y=HB.Actual/Benefit.Units*1000) ) +
+  ggplot(hsgben, aes(x=HB.Actual/Benefit.Units*1000,
+                     y=HB.Sim/Benefit.Units*1000) ) +
     geom_point(aes(size=Benefit.Units, colour=InOutLondon)) +
     ## geom_smooth(method="lm", aes(weight=Benefit.Units), se=FALSE)
-    scale_x_continuous("Simulated HB Claims (/1000 Benefit Units)") +
-    scale_y_continuous("Actual HB Claims (/1000 Benefit Units)") +
+    scale_x_continuous("Actual HB Claims (/1000 Benefit Units)") +
+    scale_y_continuous("Simulated HB Claims (/1000 Benefit Units)") +
     scale_size_area("Benefit Units", labels=comma) +
-    scale_colour_manual("", values=colpal.paired)
+    scale_colour_manual("", values=colpal.paired) + 
+    coord_equal()
 #+END_SRC
 
 #+LABEL: fig:hsg-ben
-#+CAPTION[Comparison of simulated and actual Housing Benefit claims, 2011]: Simulated against actual housing benefit rates (claims per thousand benefit units), London boroughs, 2011. Simulation SPI against DWP's published figures for June 2011.
-#+RESULTS[dd9898f187efb6d5f136106a2c323c765d6ef497]: fig:hsg-ben
+#+CAPTION[Comparison of simulated and actual Housing Benefit claims, 2011]: Simulated against actual housing benefit rates (claims per thousand benefit units), London boroughs, 2011. Figures from the SPI simulation shown against DWP's published figures for June 2011.
+#+RESULTS[043217a85c7dd4ba5e2eb77cdcff58b08f828257]: fig:hsg-ben
 [[file:fig/sim_housing_ben.pdf]]
 
 As is normal, counts and rates derived by grossing up from survey-reported benefit receipt are much smaller than the corresponding totals in administrative data. It is the correlation that is of interest, and this (0.87; 0.93 excluding the small and atypical City of London) between the actual and simulated borough rates indicates that the simulation weights effectively, if not fully, estimate inter-area differences in HB receipt. This provides additional confirmation of the usefulness of the simulation in predicting low-income, and, potentially with further adaptation, in the simulation of policy changes.
