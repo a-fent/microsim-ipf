@@ -1,6 +1,6 @@
 #+TITLE: Gentrification in London: a progress report, 2001–2013
 #+AUTHOR: Alex Fenton
-#+PROPERTY: header-args:R :session *R-LondonGrowthPoverty* :cache yes :exports results :eval no-export
+#+PROPERTY: header-args:R :session *R-LondonGrowthPoverty* :exports results :eval no-export
 #+OPTIONS: toc:nil
 #+LATEX_CLASS: koma-paper
 #+LATEX_HEADER: \IfFileExists{case-paper.sty}{\usepackage{case-paper}}{\usepackage{biblatex}}
