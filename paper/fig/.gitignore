@@ -1,0 +1,7 @@
+# This directory holds the output graphics which are generated from the
+# org files.
+
+# Ignore everything in this directory
+*
+# Except this file
+!.gitignore
