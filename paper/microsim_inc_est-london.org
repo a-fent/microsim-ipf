@@ -10,7 +10,7 @@
 #+TOC: headlines 2
 
 #+BEGIN_LaTeX
-\ifdef{\CASEcontact}{\CASEcontact{XXX}{June 2016}}{}
+\ifdef{\CASEcontact}{\CASEcontact{196}{July 2016}}{}
 \clearpage
 \listoftables
 \listoffigures
