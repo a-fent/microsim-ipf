@@ -15,6 +15,14 @@ The papers document how the analyses presented in the papers were performed, how
 The output weights from the simulations can be used to carry out analyses of borough-level income distributions in 2001 and 2011. For convenience, the fitted weights for London boroughs are included in the repository, under =/ipf/weights/=. The functions in =/r/ipf_functions.r= can be used to set up spatial simulations for each borough and to estimate statistics from them.
 
 Users who wish to use the provided weights to do their own analysis of income distributions in London boroughs will require at least a copy of the /Households Below Average Income/ case-level survey data. Some analyses, and any adaptations to the simulation itself will require a copy of the /Family Resources Survey/ case-level survey data. Both of these are available from the UK Data Archive.
+** Other implementations in R
+   When I started on this research in 2012-12, I didn't find any existing IPF implementations. There are now (2016) some dedicated packages within CRAN that offer (I haven't checked) implementations of IPF, which I found through Robin Lovelace's [[http://robinlovelace.net/spatial-microsim-book/smsim-in-R.html][draft book on spatial microsimulation]], which discusses the use of these packages for spatial microsimulation.
+
++ [[https://cran.r-project.org/web/packages/ipfp/index.html][IPFP]] :: A fast implementation of IPF in C
++ [[https://cran.r-project.org/web/packages/mipfp/index.html][MIPFP]] :: Multidimensional Iterative Proportional Fitting and Alternative Models
+
+Since it's under a different name, I also didn't find the =rake= function within the [[https://cran.r-project.org/web/packages/survey/index.html][survey]] package, which can do IPF.
+
 * Contents
 ** R
 Contains the single file =ipf_functions.r=, which provides a set of R functions for carrying out and using iterative proportional fitting (IPF) techniques in a spatial microsimulation. 
@@ -34,5 +42,5 @@ The R and data files here present the use IPF weighting to carry out a spatial m
 
    Both papers are written as [[http://orgmode.org][org-mode]] files for Emacs. They are plain text and should be readable in any editor. They contain the executable R code to produce the various tables and graphics which the published papers contain.
 * Licence
-
+  Public domain, for the time being. 
 
